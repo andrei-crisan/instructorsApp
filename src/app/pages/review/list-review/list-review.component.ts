@@ -23,7 +23,7 @@ export class ListReviewComponent implements OnInit {
       .subscribe(x => this.reviews = x);
   }
 
-  findReviewById(reviewId: number): void {
+  findReviewById(reviewId: number) {
     this.reviewService.getReviewById(reviewId)
       .subscribe(x => this.reviewById = x);
   }

@@ -1,1 +1,16 @@
-<p>add-instructor works!</p>
+<h3>Add an Instructor:</h3>
+<div>
+    <!-- <label> Id: <input #idInput type="text"></label><br> -->
+    <label> InstructorName: <input #instructorName type="text"></label><br>
+    <label> InstructorSurname: <input #instructorSurname type="text"></label><br>
+    <label> DrivingSchool: <input #drivingSchoolName type="text"></label><br>
+    <label> DrivingSchoolAddress: <input #drivingSchoolAddress type="text"></label><br>
+
+</div>
+<div>
+    <button (click)="saveInstructor(
+       instructorName.value, 
+       instructorSurname.value, 
+       drivingSchoolName.value, 
+       drivingSchoolAddress.value)">SaveInstructor</button>
+</div>

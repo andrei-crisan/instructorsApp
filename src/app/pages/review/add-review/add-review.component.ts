@@ -33,5 +33,7 @@ export class AddReviewComponent implements OnInit {
  
      this.reviewService.saveReview(reviewToSave)
        .subscribe(_ => console.log("ok"));
+
+       //TODO: VERIFICARE CONSISTENTA DATE INAINTE DE SUBSCRIBE!!
    }
 }
