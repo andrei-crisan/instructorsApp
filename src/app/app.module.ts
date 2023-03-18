@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AddReviewComponent } from './pages/review/add-review/add-review.component';
 import { ListReviewComponent } from './pages/review/list-review/list-review.component';
 import { HeaderComponent } from './pages/header/header.component';
+import { InstructorComponent } from './pages/instructor/instructor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddReviewComponent,
     ListReviewComponent,
-    HeaderComponent
+    HeaderComponent,
+    InstructorComponent
   ],
   imports: [
     HttpClientModule,

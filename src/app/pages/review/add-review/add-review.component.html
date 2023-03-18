@@ -1,1 +1,21 @@
-<p>add-review works!</p>
+<hr>
+<p>Add a review</p>
+
+<div>
+  <!-- <label> Id: <input #idInput type="text"></label><br> -->
+  <label> Review: <input #reviewInput type="text"></label><br>
+  <label> Rating: <input #ratingInput type="number"></label><br>
+  <label> InstructorName: <input #instructorName type="text"></label><br>
+  <label> InstructorSurname: <input #instructorSurname type="text"></label><br>
+  <label> DrivingSchool: <input #drivingSchool type="text"></label><br>
+  <label> DrivingSchoolAddress: <input #drivingSchoolAddress type="text"></label><br>
+</div>
+<div>
+  <button (click)="saveReview(
+    reviewInput.value, 
+    ratingInput.valueAsNumber, 
+    instructorName.value, 
+    instructorSurname.value, 
+    drivingSchool.value, 
+    drivingSchoolAddress.value)">Save</button>
+</div>

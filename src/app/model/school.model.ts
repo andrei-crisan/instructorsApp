@@ -1,8 +1,8 @@
 import { Instructor } from "./instructor.mode";
 
 export class School{
-    id: number;
+    id?: number;
     drivingSchoolName: string;
     drivingSchoolAddress: string;
-    instructors: Array<Instructor> = [];
+    instructors?: Instructor[] = [];
 }

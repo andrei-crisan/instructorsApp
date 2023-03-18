@@ -1,8 +1,10 @@
 import { Review } from "./review.model";
+import { School } from "./school.model";
 
 export class Instructor{
-    id: number;
+    id?: number;
     instructorName: string;
     instructorSurname: string;
-    reviews: Array<Review> = [];
+    reviews?: Review[] = [];
+    drivingSchool : School;
 }

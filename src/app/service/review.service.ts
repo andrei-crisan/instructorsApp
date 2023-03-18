@@ -9,9 +9,29 @@ import { Review } from '../model/review.model';
 export class ReviewService {
   private reviewRestUrl = 'http://localhost:8080/reviews';
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getAllReviews() : Observable<Review[]>{
+  getAllReviews(): Observable<Review[]> {
     return this.httpClient.get<Array<Review>>(this.reviewRestUrl);
+  }
+
+  getReviewById(reviewId: number): Observable<Review> {
+    const reviewRestUrlFindOne = `${this.reviewRestUrl}/${reviewId}`;
+    return this.httpClient.get<Review>(reviewRestUrlFindOne);
+  }
+
+  saveReview(review: Review): Observable<Review> {
+    return this.httpClient
+      .post<Review>(this.reviewRestUrl, review);
+  }
+
+  updateReview(review: Review): Observable<Review> {
+    return this.httpClient
+      .put<Review>(this.reviewRestUrl, review);
+  }
+
+  deleteReviewById(reviewId: number) {
+    const reviewRestUrlDeleteOne = `${this.reviewRestUrl}/${reviewId}`;
+    return this.httpClient.delete<Review>(reviewRestUrlDeleteOne);
   }
 }
