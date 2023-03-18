@@ -1,1 +1,4 @@
-<p>list-review works!</p>
+<h2>Reviews</h2>
+<div *ngFor="let review of reviews">
+    <p>{{review.id}}, {{review.instructor}}, {{review.instructorReview}}, {{review.experienceRating}}</p>
+</div>
