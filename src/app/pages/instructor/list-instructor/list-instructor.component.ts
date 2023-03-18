@@ -15,7 +15,7 @@ export class ListInstructorComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllInstructors();
-    // this.findInstructorById(5);
+    this.findInstructorById(5);
   }
 
   findAllInstructors() {
