@@ -10,6 +10,7 @@ import { ReviewService } from 'src/app/service/review.service';
 export class ListReviewComponent implements OnInit {
   reviewById : Review;
   reviews: Array<Review> = [];
+
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit(): void {

@@ -30,7 +30,7 @@ export class ReviewService {
       .put<Review>(this.reviewRestUrl, review);
   }
 
-  deleteReviewById(reviewId: number) {
+  deleteReviewById(reviewId: number): Observable<Review> {
     const reviewRestUrlDeleteOne = `${this.reviewRestUrl}/${reviewId}`;
     return this.httpClient.delete<Review>(reviewRestUrlDeleteOne);
   }
