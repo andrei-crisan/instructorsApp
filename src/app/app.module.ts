@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { AddReviewComponent } from './pages/review/add-review/add-review.component';
 import { ListReviewComponent } from './pages/review/list-review/list-review.component';
 import { HeaderComponent } from './pages/header/header.component';
-import { InstructorComponent } from './pages/instructor/instructor.component';
+import { AddInstructorComponent } from './pages/instructor/add-instructor/add-instructor.component';
+import { ListInstructorComponent } from './pages/instructor/list-instructor/list-instructor.component';
+import { AddSchoolComponent } from './pages/school/add-school/add-school.component';
+import { ListSchoolComponent } from './pages/school/list-school/list-school.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { InstructorComponent } from './pages/instructor/instructor.component';
     AddReviewComponent,
     ListReviewComponent,
     HeaderComponent,
-    InstructorComponent
+    AddInstructorComponent,
+    ListInstructorComponent,
+    AddSchoolComponent,
+    ListSchoolComponent
   ],
   imports: [
     HttpClientModule,
