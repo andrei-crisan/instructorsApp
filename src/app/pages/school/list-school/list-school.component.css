@@ -1,0 +1,47 @@
+button {
+    background: none;
+    border: none;
+    padding: 1px;
+    margin-left: 2px;
+    cursor: pointer;
+    float: right;
+    margin: auto;
+}
+
+.resultTable {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.resultTable thead tr {
+    background-color: #478b7e;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-weight: bold;
+}
+
+.resultTable thead tr th:last-of-type {
+    text-align: right;
+}
+
+.resultTable th,
+.resultTable td {
+    padding: 12px 15px;
+}
+
+.resultTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.resultTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.resultTable tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

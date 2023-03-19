@@ -1,5 +1,23 @@
 <h3>List of Driving Schools</h3>
-<div *ngFor="let school of schools">
-<p>{{school.drivingSchoolName}}, {{school.drivingSchoolAddress}}</p>
-</div>
-
+<table class="resultTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let school of schools">
+      <td>{{school.id}}</td>
+      <td>{{school.drivingSchoolName}}</td>
+      <td>{{school.drivingSchoolAddress}}</td>
+      <td>
+        <button class="heroes" ><i class="material-icons">delete</i></button>
+        <button id="update" ><i class="material-icons">edit</i></button>
+      </td>
+    </tr>
+  </tbody>
+  </table>

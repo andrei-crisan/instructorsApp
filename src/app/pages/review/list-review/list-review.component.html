@@ -1,9 +1,30 @@
-<h2>Reviews</h2>
-<div *ngFor="let review of reviews">
-    <p>{{review.id}}, {{review.instructorReview}}, {{review.experienceRating}}</p>
-</div>
-
-<h1>ReviewById</h1>
+<h1>Reviews</h1>
+<table class="resultTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Review</th>
+      <th>Rating</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let review of reviews">
+      <td>{{review.id}}</td>
+      <td>{{review.instructorReview}}</td>
+      <td>{{review.experienceRating}}</td>
+      <td>
+        <button class="heroes" ><i class="material-icons">delete</i></button>
+        <button id="update" ><i class="material-icons">edit</i></button>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <h1>ReviewById</h1>
 <div>
     <!-- <p>Aici e un review: {{reviewById.instructorReview}}</p> -->
 </div>
+
+  
+  

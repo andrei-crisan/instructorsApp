@@ -3,6 +3,7 @@ import { Instructor } from 'src/app/model/instructor.mode';
 import { Review } from 'src/app/model/review.model';
 import { School } from 'src/app/model/school.model';
 import { ReviewService } from 'src/app/service/review.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-review',
@@ -11,7 +12,7 @@ import { ReviewService } from 'src/app/service/review.service';
 })
 export class AddReviewComponent implements OnInit {
 
-  constructor(private reviewService : ReviewService) { }
+  constructor(private reviewService : ReviewService, private matDialog: MatDialogRef<AddReviewComponent>) { }
 
   ngOnInit(): void {
   }

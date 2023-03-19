@@ -1,7 +1,23 @@
 <h3>List of instructors</h3>
-<div *ngFor="let instructor of instructors">
-<p>{{instructor.instructorName}}, {{instructor.instructorSurname}}</p>
-<div *ngFor="let review of instructor.reviews">
-    <b>Review:</b> <p>{{review.instructorReview}}</p>
-</div>
-</div>
+<table class="resultTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let instructor of instructors">
+      <td>{{instructor.id}}</td>
+      <td>{{instructor.instructorName}}</td>
+      <td>{{instructor.instructorSurname}}</td>
+      <td>
+        <button class="heroes" ><i class="material-icons">delete</i></button>
+        <button id="update" ><i class="material-icons">edit</i></button>
+      </td>
+    </tr>
+  </tbody>
+  </table>
