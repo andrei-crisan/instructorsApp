@@ -1,1 +1,12 @@
-<p>add-school works!</p>
+<h3>Add an Driving School:</h3>
+<div>
+    <!-- <label> Id: <input #idInput type="text"></label><br> -->
+    <label> DrivingSchool: <input #drivingSchoolName type="text"></label><br>
+    <label> DrivingSchoolAddress: <input #drivingSchoolAddress type="text"></label><br>
+
+</div>
+<div>
+    <button (click)="saveDrivingSchool(
+       drivingSchoolName.value, 
+       drivingSchoolAddress.value)">SaveD</button>
+</div>

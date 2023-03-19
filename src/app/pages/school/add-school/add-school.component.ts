@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { School } from 'src/app/model/school.model';
+import { SchoolService } from 'src/app/service/school.service';
 
 @Component({
   selector: 'app-add-school',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddSchoolComponent implements OnInit {
 
-  constructor() { }
+  constructor(private schoolService: SchoolService) { }
 
   ngOnInit(): void {
+  }
+
+  saveDrivingSchool(
+    drivingSchoolName: string,
+    drivingSchoolAddress: string) {
+
+    let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
+
+    this.schoolService.saveDrivingSchool(drivingSchool)
+      .subscribe(_ => console.log("Ok!"));
   }
 
 }

@@ -2,6 +2,6 @@
 <div *ngFor="let instructor of instructors">
 <p>{{instructor.instructorName}}, {{instructor.instructorSurname}}</p>
 <div *ngFor="let review of instructor.reviews">
-    <p>{{review.instructorReview}}</p>
+    <b>Review:</b> <p>{{review.instructorReview}}</p>
 </div>
 </div>
