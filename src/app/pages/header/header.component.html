@@ -3,13 +3,14 @@
     <ul>
         <li><a href=""><i class="material-icons">home</i></a></li>
         <li><a class="meniu"><i class="material-icons">search</i></a></li>
-        <li><a href=""><i class="material-icons">list_alt</i></a></li>
-        <li><a class="meniu" class="meniu" (click)="openDialog()"><i class="material-icons">add_box</i></a></li>
+        <li><a class="meniu" (click)="navigateTo()"><i class="material-icons">list_alt</i></a></li>
+        <li><a class="meniu" (click)="openDialog()"><i class="material-icons">add_box</i></a></li>
         <li>
-        <select class="entitate">
-            <option value="">Reviews</option>
-            <option value="">Instructors</option>
-            <option value="">DrivingSchools</option>
-         </select></li>
+        <select id="select-entity-list" [(ngModel)]="selectedEntity" >
+        <option *ngFor="let entitate of entityDropDownList" [value]="entitate.id">
+            {{entitate.entityName}}     
+        </option>
+         </select>
+        </li>
     </ul>
 </nav>

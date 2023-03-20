@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule
 
   ],
   providers: [],
