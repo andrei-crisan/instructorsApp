@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Select } from 'src/app/model/select.model';
+import { AddInstructorComponent } from '../instructor/add-instructor/add-instructor.component';
 import { AddReviewComponent } from '../review/add-review/add-review.component';
+import { AddSchoolComponent } from '../school/add-school/add-school.component';
 
 @Component({
   selector: 'app-header',
@@ -24,10 +26,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog() {
-    this.matDialog.open(AddReviewComponent);
+    if (this.selectedEntity == 1) {
+      this.matDialog.open(AddReviewComponent);
+    }
+    if (this.selectedEntity == 2) {
+      this.matDialog.open(AddInstructorComponent);
+    }
+    if (this.selectedEntity == 3) {
+      this.matDialog.open(AddSchoolComponent);
+    }
   }
 
-  navigateTo() {
+  showList() {
     if (this.selectedEntity == 1) {
       this.router.navigateByUrl("/reviews");
     }
