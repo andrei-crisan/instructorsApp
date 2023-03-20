@@ -25,7 +25,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  openDialog() {
+
+  openModalComponent() {
     if (this.selectedEntity == 1) {
       this.matDialog.open(AddReviewComponent);
     }
@@ -35,6 +36,10 @@ export class HeaderComponent implements OnInit {
     if (this.selectedEntity == 3) {
       this.matDialog.open(AddSchoolComponent);
     }
+  }
+  closeModalComponents(){
+
+
   }
 
   showList() {

@@ -1,50 +1,49 @@
 <div class="containerAdd">
   <p>New review</p>
   <form class="new-review">
-      <mat-form-field class="review">
-          <mat-label>Review: </mat-label>
-          <input matInput #reviewInput>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="rating">
-          <mat-label>Rating: </mat-label>
-          <input matInput type="number" #ratingInput>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="instructor-name">
-          <mat-label>InstructorName: </mat-label>
-          <input matInput type="number" #instructorName>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="instructor-surname">
-          <mat-label>InstructorSurname: </mat-label>
-          <input matInput #instructorSurname>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="driving-school">
-          <mat-label>DrivingSchool: </mat-label>
-          <input matInput #drivingSchool>
-      </mat-form-field>
-      <mat-form-field class="driving-school-address">
-        <mat-label>DrivingSchoolAddress: </mat-label>
-        <input matInput #drivingSchoolAddress>
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a review</mat-label>
+      <textarea matInput placeholder="Ex. Experienta a fost una..." #reviewInput></textarea>
+    </mat-form-field>
+    <mat-form-field class="rating">
+      <mat-label>Rating </mat-label>
+      <input matInput type="number" #ratingInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="instructor-name">
+      <mat-label>Instructor's name </mat-label>
+      <input matInput #instructorName>
+    </mat-form-field>
+
+    <mat-form-field class="instructor-surname">
+      <mat-label>Instructor's surname </mat-label>
+      <input matInput #instructorSurname>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="driving-school">
+      <mat-label>Driving school </mat-label>
+      <input matInput #drivingSchool>
+    </mat-form-field>
+    <mat-form-field class="driving-school-address">
+      <mat-label>Driving's school address </mat-label>
+      <input matInput #drivingSchoolAddress>
     </mat-form-field>
   </form>
-<div class="butoane">
-  <nav>
+  <div class="butoane">
+    <nav>
       <ul>
-          <li>
-              <button mat-raised-button (click)="saveReview(
+        <li>
+          <button mat-raised-button (click)="saveReview(
                 reviewInput.value, 
                 ratingInput.valueAsNumber, 
                 instructorName.value, 
                 instructorSurname.value, 
                 drivingSchool.value, 
                 drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
-          </li>
-          <li>
-              <button mat-raised-button ><i
-                      class="material-icons">cancel</i></button>
-          </li>
+        </li>
+        <li>
+          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+        </li>
       </ul>
-  </nav>
+    </nav>
+    </div>

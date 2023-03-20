@@ -4,7 +4,7 @@
         <li><a href=""><i class="material-icons">home</i></a></li>
         <li><a class="meniu"><i class="material-icons">search</i></a></li>
         <li><a class="meniu" (click)="showList()"><i class="material-icons">list_alt</i></a></li>
-        <li><a class="meniu" (click)="openDialog()"><i class="material-icons">add_box</i></a></li>
+        <li><a class="meniu" (click)="openModalComponent()"><i class="material-icons">add_box</i></a></li>
         <li>
         <select id="select-entity-list" [(ngModel)]="selectedEntity" >
         <option *ngFor="let entitate of entityDropDownList" [value]="entitate.id">

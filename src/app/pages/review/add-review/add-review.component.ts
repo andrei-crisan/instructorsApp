@@ -12,29 +12,32 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddReviewComponent implements OnInit {
 
-  constructor(private reviewService : ReviewService, private matDialog: MatDialogRef<AddReviewComponent>) { }
+  constructor(private reviewService: ReviewService, private matDialog: MatDialogRef<AddReviewComponent>) { }
 
   ngOnInit(): void {
   }
 
-  
+  closeModalComponent() {
+    this.matDialog.close();
+  }
+
   saveReview(
-    instructorReview: string, 
-    experienceRating: number, 
-    instructorName : string, 
-    instructorSurname : string, 
-    drivingSchoolName : string, 
-    drivingSchoolAddress : string) {
+    instructorReview: string,
+    experienceRating: number,
+    instructorName: string,
+    instructorSurname: string,
+    drivingSchoolName: string,
+    drivingSchoolAddress: string) {
 
-     var ara : Review[] = [];
-    
-     let drivingSchool : School = {drivingSchoolName, drivingSchoolAddress}
-     let instructor : Instructor = {instructorName, instructorSurname, reviews: ara, drivingSchool};
-     let reviewToSave : Review = {instructorReview, experienceRating, instructor : instructor}
- 
-     this.reviewService.saveReview(reviewToSave)
-       .subscribe(_ => console.log("ok"));
+    var ara: Review[] = [];
 
-       //TODO: VERIFICARE CONSISTENTA DATE INAINTE DE SUBSCRIBE!!
-   }
+    let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
+    let instructor: Instructor = { instructorName, instructorSurname, reviews: ara, drivingSchool };
+    let reviewToSave: Review = { instructorReview, experienceRating, instructor: instructor }
+
+    this.reviewService.saveReview(reviewToSave)
+      .subscribe(_ => console.log("ok"));
+
+    this.closeModalComponent();
+  }
 }

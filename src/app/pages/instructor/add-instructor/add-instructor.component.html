@@ -1,16 +1,39 @@
-<h3>Add an Instructor:</h3>
-<div>
-    <!-- <label> Id: <input #idInput type="text"></label><br> -->
-    <label> InstructorName: <input #instructorName type="text"></label><br>
-    <label> InstructorSurname: <input #instructorSurname type="text"></label><br>
-    <label> DrivingSchool: <input #drivingSchoolName type="text"></label><br>
-    <label> DrivingSchoolAddress: <input #drivingSchoolAddress type="text"></label><br>
+<h3>New instructor</h3>
 
-</div>
-<div>
-    <button (click)="saveInstructor(
-       instructorName.value, 
-       instructorSurname.value, 
-       drivingSchoolName.value, 
-       drivingSchoolAddress.value)">SaveInstructor</button>
-</div>
+<form class="new-instructor">
+    <mat-form-field class="instructor-name">
+      <mat-label>InstructorName: </mat-label>
+      <input matInput #instructorName>
+    </mat-form-field>
+
+    <mat-form-field class="instructor-surname">
+      <mat-label>InstructorSurname: </mat-label>
+      <input matInput #instructorSurname>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="driving-school">
+      <mat-label>DrivingSchool: </mat-label>
+      <input matInput #drivingSchoolName>
+    </mat-form-field>
+    <mat-form-field class="driving-school-address">
+      <mat-label>DrivingSchoolAddress: </mat-label>
+      <input matInput #drivingSchoolAddress>
+    </mat-form-field>
+  </form>
+  <div class="butoane">
+    <nav>
+      <ul>
+        <li>
+        <button mat-raised-button (click)="saveInstructor(
+            instructorName.value, 
+            instructorSurname.value, 
+            drivingSchoolName.value, 
+            drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
+        </li>
+        <li>
+          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+        </li>
+      </ul>
+    </nav>
+    </div>
+

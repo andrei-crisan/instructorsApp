@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { School } from 'src/app/model/school.model';
 import { SchoolService } from 'src/app/service/school.service';
 
@@ -8,10 +9,14 @@ import { SchoolService } from 'src/app/service/school.service';
   styleUrls: ['./add-school.component.css']
 })
 export class AddSchoolComponent implements OnInit {
-
-  constructor(private schoolService: SchoolService) { }
+  //private matDialog: MatDialogRef<AddReviewComponent>
+  constructor(private schoolService: SchoolService, private matDialog: MatDialogRef<AddSchoolComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  closeModalComponent() {
+    this.matDialog.close();
   }
 
   saveDrivingSchool(
@@ -22,6 +27,8 @@ export class AddSchoolComponent implements OnInit {
 
     this.schoolService.saveDrivingSchool(drivingSchool)
       .subscribe(_ => console.log("Ok!"));
+
+    this.closeModalComponent();
   }
 
 }
