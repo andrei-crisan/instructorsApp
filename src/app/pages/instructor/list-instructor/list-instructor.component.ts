@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Instructor } from 'src/app/model/instructor.mode';
 import { InstructorService } from 'src/app/service/instructor.service';
 import { DataInstructorComponent } from '../data-instructor/data-instructor.component';
@@ -14,15 +15,17 @@ import { DetailsInstructorComponent } from '../details-instructor/details-instru
 export class ListInstructorComponent implements OnInit {
   instructorById: Instructor;
   instructors: Array<Instructor> = [];
+  searchResponseParameter: number;
 
   constructor(
     private instructorService: InstructorService,
     private matDialog: MatDialog,
-    private location: Location) { }
+    private location: Location,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getResponseFromSearchComponent();
     this.findAllInstructors();
-    this.findInstructorById(5);
   }
 
   findAllInstructors() {
@@ -47,6 +50,16 @@ export class ListInstructorComponent implements OnInit {
   openDetailsModaComponent(instructor: Instructor) {
     if (instructor.reviews?.length != 0) {
       this.matDialog.open(DetailsInstructorComponent, { data: instructor });
+    }
+  }
+
+  getResponseFromSearchComponent() {
+    if (this.activatedRoute.snapshot.params['id'] > 0) {
+      this.searchResponseParameter = this.activatedRoute.snapshot.params['id'];
+      this.instructorService.getInstructorById(this.searchResponseParameter)
+        .subscribe(x => this.instructorById = x);
+    } else {
+      this.searchResponseParameter = 0;
     }
   }
 

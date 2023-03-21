@@ -24,6 +24,7 @@ import { DataInstructorComponent } from './pages/instructor/data-instructor/data
 import { DataReviewComponent } from './pages/review/data-review/data-review.component';
 import {MatCardModule} from '@angular/material/card';
 import { DetailsInstructorComponent } from './pages/instructor/details-instructor/details-instructor.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { DetailsInstructorComponent } from './pages/instructor/details-instructo
     DataSchoolComponent,
     DataInstructorComponent,
     DataReviewComponent,
-    DetailsInstructorComponent
+    DetailsInstructorComponent,
+    SearchComponent
   ],
   imports: [
     HttpClientModule,

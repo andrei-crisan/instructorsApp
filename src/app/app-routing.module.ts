@@ -11,7 +11,9 @@ const routes: Routes = [
   {path: 'add_review', component: AddReviewComponent},
   {path: 'reviews', component: ListReviewComponent},
   {path: 'instructors', component: ListInstructorComponent},
+  {path: 'instructors/:id', component: ListInstructorComponent},
   {path: 'schools', component: ListSchoolComponent},
+  
 ];
 
 @NgModule({

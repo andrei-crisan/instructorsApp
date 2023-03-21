@@ -5,6 +5,7 @@ import { Select } from 'src/app/model/select.model';
 import { AddInstructorComponent } from '../instructor/add-instructor/add-instructor.component';
 import { AddReviewComponent } from '../review/add-review/add-review.component';
 import { AddSchoolComponent } from '../school/add-school/add-school.component';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-header',
@@ -37,6 +38,8 @@ export class HeaderComponent implements OnInit {
       this.matDialog.open(AddSchoolComponent);
     }
   }
+
+  
   closeModalComponents(){
 
 
@@ -52,6 +55,10 @@ export class HeaderComponent implements OnInit {
     if (this.selectedEntity == 3) {
       this.router.navigateByUrl("/schools");
     }
+  }
+
+  openModalSearchComponent(){
+    this.matDialog.open(SearchComponent);
   }
 
 }
