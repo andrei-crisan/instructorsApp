@@ -11,10 +11,11 @@ import { DataReviewComponent } from '../data-review/data-review.component';
   styleUrls: ['./list-review.component.css']
 })
 export class ListReviewComponent implements OnInit {
+  selectorReview: boolean = false;
   reviewById: Review;
   reviews: Array<Review> = [];
 
-  constructor(private location : Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
+  constructor(private location: Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAllReviews();
@@ -34,12 +35,20 @@ export class ListReviewComponent implements OnInit {
   deleteSelectedReview(reviewId) {
     this.reviewService.deleteReviewById(reviewId)
       .subscribe(_ => console.log("Ok!"));
-      this.location.back();
-   
+    this.location.back();
+
   }
 
   openDataModalComponent(review) {
     this.matDialog.open(DataReviewComponent, { data: review });
+  }
+
+  showReviews() {
+    if (this.selectorReview) {
+      this.selectorReview=false;
+    } else {
+     this.selectorReview=true;
+    }
   }
 
 

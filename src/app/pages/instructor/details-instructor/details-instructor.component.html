@@ -1,0 +1,21 @@
+<h3>Reviws of {{selectedInstructor.instructorName}}</h3>
+<div class="display-scene-details">
+  <table class="resultTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of selectedInstructor.reviews">
+        <td>{{review.id}}</td>
+        <td>{{review.instructorReview}}</td>
+        <td>{{review.experienceRating}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

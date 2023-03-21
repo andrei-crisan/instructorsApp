@@ -1,5 +1,28 @@
 <h1>Reviews</h1>
-<table class="resultTable">
+<div class="display-scene">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actions Buttons</mat-card-title>
+      <mat-card-subtitle>End</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <br>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Actions Buttons</mat-card-title>
+      <mat-card-subtitle>End</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button (click)="showReviews()">arata</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+  <table class="resultTable" *ngIf="selectorReview">
     <thead>
     <tr>
       <th>ID</th>
@@ -8,7 +31,6 @@
       <th>Operations</th>
     </tr>
   </thead>
-  
   <tbody>
     <tr *ngFor="let review of reviews">
       <td>{{review.id}}</td>
@@ -21,10 +43,14 @@
     </tr>
   </tbody>
   </table>
+  
+</div>
   <h1>ReviewById</h1>
 <div>
     <!-- <p>Aici e un review: {{reviewById.instructorReview}}</p> -->
 </div>
+
+
 
   
   

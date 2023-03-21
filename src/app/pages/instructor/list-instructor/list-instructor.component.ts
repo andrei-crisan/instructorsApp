@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Instructor } from 'src/app/model/instructor.mode';
 import { InstructorService } from 'src/app/service/instructor.service';
 import { DataInstructorComponent } from '../data-instructor/data-instructor.component';
+import { DetailsInstructorComponent } from '../details-instructor/details-instructor.component';
 
 @Component({
   selector: 'app-list-instructor',
@@ -42,6 +43,11 @@ export class ListInstructorComponent implements OnInit {
 
   openDataModalComponent(instructor) {
     this.matDialog.open(DataInstructorComponent, { data: instructor });
+  }
+  openDetailsModaComponent(instructor: Instructor) {
+    if (instructor.reviews?.length != 0) {
+      this.matDialog.open(DetailsInstructorComponent, { data: instructor });
+    }
   }
 
 }

@@ -22,6 +22,9 @@ import { FormsModule } from '@angular/forms';
 import { DataSchoolComponent } from './pages/school/data-school/data-school.component';
 import { DataInstructorComponent } from './pages/instructor/data-instructor/data-instructor.component';
 import { DataReviewComponent } from './pages/review/data-review/data-review.component';
+import {MatCardModule} from '@angular/material/card';
+import { DetailsInstructorComponent } from './pages/instructor/details-instructor/details-instructor.component';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +38,15 @@ import { DataReviewComponent } from './pages/review/data-review/data-review.comp
     ListSchoolComponent,
     DataSchoolComponent,
     DataInstructorComponent,
-    DataReviewComponent
+    DataReviewComponent,
+    DetailsInstructorComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
 
     MatFormFieldModule,
     MatSlideToggleModule,

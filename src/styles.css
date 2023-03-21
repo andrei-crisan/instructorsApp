@@ -9,5 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: white;
     background-color: #478b7e;
   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  .display-scene {
+    margin: 50px;
+    padding:0px;
+}

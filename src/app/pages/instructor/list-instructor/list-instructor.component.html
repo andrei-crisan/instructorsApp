@@ -1,25 +1,26 @@
 <h3>List of instructors</h3>
-<table class="resultTable">
+<div class="display-scene">
+  <table class="resultTable">
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Operations</th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <tr *ngFor="let instructor of instructors">
-      <td>{{instructor.id}}</td>
-      <td>{{instructor.instructorName}}</td>
-      <td>{{instructor.instructorSurname}}
-      <p *ngFor="let rev of instructor.reviews">{{rev.instructorReview}}</p>
-      </td>
-      <td>
-        <button id="delete" (click)="deleteSelectedInstructor(instructor.id)" ><i class="material-icons">delete</i></button>
-        <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons">edit</i></button>
-      </td>
-    </tr>
-  </tbody>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instructor of instructors">
+        <td>{{instructor.id}}</td>
+        <td (click)="openDetailsModaComponent(instructor)">{{instructor.instructorName}}</td>
+        <td>{{instructor.instructorSurname}}
+        </td>
+        <td>
+          <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
+              class="material-icons">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons">edit</i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
+</div>
