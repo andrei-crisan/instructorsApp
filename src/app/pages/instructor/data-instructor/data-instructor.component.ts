@@ -23,6 +23,7 @@ export class DataInstructorComponent implements OnInit {
 
   closeModalComponent() {
     this.matDialog.close();
+
   }
 
   updateInstructor(

@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { DataSchoolComponent } from './pages/school/data-school/data-school.component';
 import { DataInstructorComponent } from './pages/instructor/data-instructor/data-instructor.component';
+import { DataReviewComponent } from './pages/review/data-review/data-review.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DataInstructorComponent } from './pages/instructor/data-instructor/data
     AddSchoolComponent,
     ListSchoolComponent,
     DataSchoolComponent,
-    DataInstructorComponent
+    DataInstructorComponent,
+    DataReviewComponent
   ],
   imports: [
     HttpClientModule,
