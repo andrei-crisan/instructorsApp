@@ -1,0 +1,25 @@
+<h3>Update driving school</h3>
+<form class="update-driving-schools">
+    <mat-form-field class="driving-school">
+      <mat-label>Driving school: </mat-label>
+      <input matInput #drivingSchoolName value="{{selectedSchool.drivingSchoolName}}">
+    </mat-form-field>
+    <mat-form-field class="driving-school-address">
+      <mat-label>Driving's school address: </mat-label>
+      <input matInput #drivingSchoolAddress value="{{selectedSchool.drivingSchoolAddress}}">
+    </mat-form-field>
+  </form>
+  <div class="butoane">
+    <nav>
+      <ul>
+        <li>
+        <button mat-raised-button (click)="updateDrivingSchool(
+            drivingSchoolName.value, 
+            drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
+        </li>
+        <li>
+          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+        </li>
+      </ul>
+    </nav>
+    </div>

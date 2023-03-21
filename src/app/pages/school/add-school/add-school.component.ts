@@ -9,7 +9,6 @@ import { SchoolService } from 'src/app/service/school.service';
   styleUrls: ['./add-school.component.css']
 })
 export class AddSchoolComponent implements OnInit {
-  //private matDialog: MatDialogRef<AddReviewComponent>
   constructor(private schoolService: SchoolService, private matDialog: MatDialogRef<AddSchoolComponent>) { }
 
   ngOnInit(): void {

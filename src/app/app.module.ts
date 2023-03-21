@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { DataSchoolComponent } from './pages/school/data-school/data-school.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     AddInstructorComponent,
     ListInstructorComponent,
     AddSchoolComponent,
-    ListSchoolComponent
+    ListSchoolComponent,
+    DataSchoolComponent
   ],
   imports: [
     HttpClientModule,
