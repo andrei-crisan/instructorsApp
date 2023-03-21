@@ -1,14 +1,14 @@
-<h3>New instructor</h3>
+<h3>Update instructor</h3>
 
-<form class="new-instructor">
+<form class="update-instructor">
     <mat-form-field class="instructor-name">
       <mat-label>InstructorName: </mat-label>
-      <input matInput #instructorName>
+      <input matInput #instructorName value="{{selectedInstructor.instructorName}}">
     </mat-form-field>
 
     <mat-form-field class="instructor-surname">
       <mat-label>InstructorSurname: </mat-label>
-      <input matInput #instructorSurname>
+      <input matInput #instructorSurname value="{{selectedInstructor.instructorSurname}}">
     </mat-form-field>
     <br>
     <mat-form-field class="driving-school">
@@ -24,7 +24,7 @@
     <nav>
       <ul>
         <li>
-        <button mat-raised-button (click)="saveInstructor(
+        <button mat-raised-button (click)="updateInstructor(
             instructorName.value, 
             instructorSurname.value, 
             drivingSchoolName.value, 

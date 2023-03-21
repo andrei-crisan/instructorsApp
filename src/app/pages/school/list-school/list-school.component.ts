@@ -32,8 +32,6 @@ export class ListSchoolComponent implements OnInit {
   openDataModalComponent(schoolId) {
     console.log(schoolId);
     this.matDialog.open(DataSchoolComponent, {data: schoolId});
-
-    // data: { person: {name: nameInput, email: emailInput }
   }
 
 }
