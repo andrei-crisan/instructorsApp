@@ -13,9 +13,11 @@
     <tr *ngFor="let instructor of instructors">
       <td>{{instructor.id}}</td>
       <td>{{instructor.instructorName}}</td>
-      <td>{{instructor.instructorSurname}}</td>
+      <td>{{instructor.instructorSurname}}
+      <p *ngFor="let rev of instructor.reviews">{{rev.instructorReview}}</p>
+      </td>
       <td>
-        <button class="heroes" ><i class="material-icons">delete</i></button>
+        <button id="delete" (click)="deleteSelectedInstructor(instructor.id)" ><i class="material-icons">delete</i></button>
         <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons">edit</i></button>
       </td>
     </tr>

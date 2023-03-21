@@ -31,7 +31,7 @@ export class SchoolService {
   }
 
   deleteDrivingSchoolById(reviewId: number): Observable<School> {
-    const schoolRestUrlDeleteOne = `${this.schoolRestUrl}/${reviewId}`;
+    const schoolRestUrlDeleteOne = `${this.schoolRestUrl}/rm/${reviewId}`;
     return this.httpClient.delete<School>(schoolRestUrlDeleteOne);
   }  
 }

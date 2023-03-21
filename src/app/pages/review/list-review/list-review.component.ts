@@ -1,8 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Review } from 'src/app/model/review.model';
 import { ReviewService } from 'src/app/service/review.service';
-import { DataSchoolComponent } from '../../school/data-school/data-school.component';
+import { DataReviewComponent } from '../data-review/data-review.component';
 
 @Component({
   selector: 'app-list-review',
@@ -13,11 +14,11 @@ export class ListReviewComponent implements OnInit {
   reviewById: Review;
   reviews: Array<Review> = [];
 
-  constructor(private reviewService: ReviewService, private matDialog: MatDialog) { }
+  constructor(private location : Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAllReviews();
-    this.findReviewById(13); //revenire, harcodede value
+    this.findReviewById(13);                          //revenire, harDcodede value
   }
 
   findAllReviews() {
@@ -30,8 +31,16 @@ export class ListReviewComponent implements OnInit {
       .subscribe(x => this.reviewById = x);
   }
 
-  openDataModalComponent() {
-    this.matDialog.open(DataSchoolComponent);
+  deleteSelectedReview(reviewId) {
+    this.reviewService.deleteReviewById(reviewId)
+      .subscribe(_ => console.log("Ok!"));
+      this.location.back();
+   
   }
+
+  openDataModalComponent(review) {
+    this.matDialog.open(DataReviewComponent, { data: review });
+  }
+
 
 }

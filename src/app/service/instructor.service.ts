@@ -33,7 +33,7 @@ export class InstructorService {
   }
 
   deleteInstructor(instructorId: number): Observable<Instructor> {
-    const instructorRestUrlDeleteOne = `${this.instructorRestUrl}/${instructorId}`;
+    const instructorRestUrlDeleteOne = `${this.instructorRestUrl}/rm/${instructorId}`;
     return this.httpClient
       .delete<Instructor>(instructorRestUrlDeleteOne);
   }

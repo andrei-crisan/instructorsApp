@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Instructor } from 'src/app/model/instructor.mode';
@@ -14,8 +15,9 @@ export class ListInstructorComponent implements OnInit {
   instructors: Array<Instructor> = [];
 
   constructor(
-    private instructorService: InstructorService, 
-    private matDialog: MatDialog) { }
+    private instructorService: InstructorService,
+    private matDialog: MatDialog,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.findAllInstructors();
@@ -32,8 +34,14 @@ export class ListInstructorComponent implements OnInit {
       .subscribe(x => this.instructorById = x);
   }
 
+  deleteSelectedInstructor(instructorId) {
+    this.instructorService.deleteInstructor(instructorId)
+      .subscribe(_ => console.log("Ok!"));
+    this.location.back();
+  }
+
   openDataModalComponent(instructor) {
-    this.matDialog.open(DataInstructorComponent, {data: instructor});
+    this.matDialog.open(DataInstructorComponent, { data: instructor });
   }
 
 }

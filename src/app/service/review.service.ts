@@ -31,7 +31,7 @@ export class ReviewService {
   }
 
   deleteReviewById(reviewId: number): Observable<Review> {
-    const reviewRestUrlDeleteOne = `${this.reviewRestUrl}/${reviewId}`;
+    const reviewRestUrlDeleteOne = `${this.reviewRestUrl}/rm/${reviewId}`;
     return this.httpClient.delete<Review>(reviewRestUrlDeleteOne);
   }
 }

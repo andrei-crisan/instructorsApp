@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { School } from 'src/app/model/school.model';
@@ -13,7 +14,10 @@ export class ListSchoolComponent implements OnInit {
   schoolByid: School;
   schools: Array<School> = [];
 
-  constructor(private schoolService : SchoolService, private matDialog: MatDialog) { }
+  constructor(
+    private schoolService: SchoolService,
+    private matDialog: MatDialog,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.findAllDrivingSchools();
@@ -29,9 +33,15 @@ export class ListSchoolComponent implements OnInit {
       .subscribe(x => this.schoolByid = x);
   }
 
+  deleteSelectedDrivingSchool(drivingSchoolId) {
+    this.schoolService.deleteDrivingSchoolById(drivingSchoolId)
+      .subscribe(_ => console.log("Ok!"));
+     this.location.back();
+  }
+
   openDataModalComponent(schoolId) {
     console.log(schoolId);
-    this.matDialog.open(DataSchoolComponent, {data: schoolId});
+    this.matDialog.open(DataSchoolComponent, { data: schoolId });
   }
 
 }

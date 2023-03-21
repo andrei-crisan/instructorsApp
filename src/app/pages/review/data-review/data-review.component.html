@@ -1,1 +1,26 @@
-<p>data-review works!</p>
+<div class="containerAdd">
+    <p>Edit review</p>
+    <form class="new-review">
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a review</mat-label>
+        <textarea matInput value="{{selectedReview.instructorReview}}" #reviewInput></textarea>
+      </mat-form-field>
+      <mat-form-field class="rating">
+        <mat-label>Rating </mat-label>
+        <input matInput type="number" #ratingInput value="{{selectedReview.experienceRating}}">
+      </mat-form-field>
+    </form>
+    <div class="butoane">
+      <nav>
+        <ul>
+          <li>
+            <button mat-raised-button (click)="updateReview(
+                  reviewInput.value, 
+                  ratingInput.valueAsNumber)"><i class="material-icons">add</i></button>
+          </li>
+          <li>
+            <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+          </li>
+        </ul>
+      </nav>
+      </div>

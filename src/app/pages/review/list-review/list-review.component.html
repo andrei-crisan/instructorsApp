@@ -15,8 +15,8 @@
       <td>{{review.instructorReview}}</td>
       <td>{{review.experienceRating}}</td>
       <td>
-        <button class="heroes" ><i class="material-icons">delete</i></button>
-        <button id="update" (click)="openDataModalComponent()"><i class="material-icons">edit</i></button>
+        <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons">delete</i></button>
+        <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons">edit</i></button>
       </td>
     </tr>
   </tbody>
