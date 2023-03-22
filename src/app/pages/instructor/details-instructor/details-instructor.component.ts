@@ -20,6 +20,7 @@ export class DetailsInstructorComponent implements OnInit {
   negativeReviewsPercentage: number = 0;
 
   ngOnInit(): void {
+    console.log(this.selectedInstructor.drivingSchoolName);
     this.statsForReviews();
   }
 

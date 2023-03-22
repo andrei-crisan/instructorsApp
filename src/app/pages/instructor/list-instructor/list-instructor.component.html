@@ -1,20 +1,19 @@
-<h3>List of instructors</h3>
 <div class="display-scene">
+  <h2> i n s t r u c t o r s | or devils</h2>
   <table class="resultTable">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>Surname</th>
+        <th>Driving school</th>
         <th>Operations</th>
       </tr>
     </thead>
     <tbody *ngIf="searchResponseParameter<=0">
       <tr *ngFor="let instructor of instructors">
-        <td>{{instructor.id}}</td>
         <td (click)="openDetailsModaComponent(instructor)">{{instructor.instructorName}}</td>
         <td>{{instructor.instructorSurname}}
-        </td>
+          <td>{{instructor.drivingSchoolName}}, {{instructor.drivingSchoolAddress}}</td>
         <td>
           <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
               class="material-icons">delete</i></button>
@@ -24,9 +23,9 @@
     </tbody>
     <tbody *ngIf="searchResponseParameter>0 && instructorById!=null">
       <tr>
-        <td>{{instructorById.id}}</td>
         <td (click)="openDetailsModaComponent(instructorById)">{{instructorById.instructorName}}</td>
         <td>{{instructorById.instructorSurname}}</td>
+        <td>{{instructorById.drivingSchoolName}}, {{instructorById.drivingSchoolAddress}}</td>
         <td>
           <button id="delete" (click)="deleteSelectedInstructor(instructorById.id)"><i
               class="material-icons">delete</i></button>

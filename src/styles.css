@@ -19,3 +19,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 50px;
     padding:0px;
 }
+.display-scene h2 {
+  text-align: center;
+}

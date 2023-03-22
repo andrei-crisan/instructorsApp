@@ -1,56 +1,25 @@
-<h1>Reviews</h1>
 <div class="display-scene">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Actions Buttons</mat-card-title>
-      <mat-card-subtitle>End</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-actions align="end">
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  
-  <br>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Actions Buttons</mat-card-title>
-      <mat-card-subtitle>End</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-actions align="end">
-      <button mat-button (click)="showReviews()">arata</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  <table class="resultTable" *ngIf="selectorReview">
+  <h2> r e v i e w s | or curses</h2>
+  <table class="resultTable">
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Review</th>
-      <th>Rating</th>
-      <th>Operations</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let review of reviews">
-      <td>{{review.id}}</td>
-      <td>{{review.instructorReview}}</td>
-      <td>{{review.experienceRating}}</td>
-      <td>
-        <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons">delete</i></button>
-        <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons">edit</i></button>
-      </td>
-    </tr>
-  </tbody>
+      <tr>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviews">
+        <td>{{review.instructorReview}}</td>
+        <td *ngIf="review.experienceRating == 2"><i
+            class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>
+        <td *ngIf="review.experienceRating == 1"><i
+            class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
+        </td>
+        <td>
+          <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons">edit</i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
-  
-</div>
-  <h1>ReviewById</h1>
-<div>
-    <!-- <p>Aici e un review: {{reviewById.instructorReview}}</p> -->
-</div>
-
-
-
-  
-  

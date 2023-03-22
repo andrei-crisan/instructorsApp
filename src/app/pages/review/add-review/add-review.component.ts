@@ -41,7 +41,7 @@ export class AddReviewComponent implements OnInit {
     var ara: Review[] = [];
 
     let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
-    let instructor: Instructor = { instructorName, instructorSurname, reviews: ara, drivingSchool };
+    let instructor: Instructor = { instructorName, instructorSurname, reviews: ara, drivingSchoolName, drivingSchoolAddress };
     let reviewToSave: Review = { instructorReview, experienceRating: experienceRatingToSend, instructor: instructor }
 
     this.reviewService.saveReview(reviewToSave)

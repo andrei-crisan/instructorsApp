@@ -26,8 +26,8 @@ export class AddInstructorComponent implements OnInit {
     drivingSchoolName: string,
     drivingSchoolAddress: string) {
 
-    let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
-    let instructor: Instructor = { instructorName, instructorSurname, drivingSchool };
+    // let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
+    let instructor: Instructor = { instructorName, instructorSurname, drivingSchoolName, drivingSchoolAddress };
 
     this.instructorService.saveInstructor(instructor)
       .subscribe(_ => console.log("Ok!"));

@@ -31,6 +31,7 @@ export class ListInstructorComponent implements OnInit {
   findAllInstructors() {
     this.instructorService.getAllInstructor()
       .subscribe(x => this.instructors = x);
+      console.log(this.instructors);
   }
 
   findInstructorById(instructorId: number) {

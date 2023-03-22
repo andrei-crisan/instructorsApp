@@ -1,4 +1,7 @@
-<h3>Reviews for {{selectedInstructor.instructorName}} {{selectedInstructor.instructorSurname}}</h3>
+<h3>Reviews for {{selectedInstructor.instructorName}}
+  {{selectedInstructor.instructorSurname}} of:
+  {{selectedInstructor.drivingSchoolName}},
+  {{selectedInstructor.drivingSchoolAddress}}</h3>
 <div class="display-scene-details">
   <table class="resultTable">
     <thead>
@@ -12,12 +15,15 @@
       <tr *ngFor="let review of selectedInstructor.reviews">
         <td>{{review.id}}</td>
         <td>{{review.instructorReview}}</td>
-        <td *ngIf="review.experienceRating == 2"><i class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>
-        <td *ngIf="review.experienceRating == 1"><i class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
+        <td *ngIf="review.experienceRating == 2"><i
+            class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>
+        <td *ngIf="review.experienceRating == 1"><i
+            class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
         </td>
       </tr>
     </tbody>
   </table>
   <br>
-  <p>Positive reviews: {{ positiveReviewsPercentage | number : '1.2-2'}}% | Negative reviews: {{ negativeReviewsPercentage | number : '1.2-2'}}%</p> 
+  <p>Positive reviews: {{ positiveReviewsPercentage | number : '1.2-2'}}% | Negative reviews: {{
+    negativeReviewsPercentage | number : '1.2-2'}}%</p>
 </div>

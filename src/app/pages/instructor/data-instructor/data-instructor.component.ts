@@ -32,8 +32,15 @@ export class DataInstructorComponent implements OnInit {
     drivingSchoolName: string,
     drivingSchoolAddress: string) {
 
-    let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
-    let instructor: Instructor = { id: this.selectedInstructor.id, instructorName, instructorSurname, drivingSchool };
+    let instructor: Instructor = { 
+      id: this.selectedInstructor.id, 
+      instructorName, 
+      instructorSurname, 
+      drivingSchooldId: this.selectedInstructor.
+      drivingSchooldId, 
+      drivingSchoolName,  
+      drivingSchoolAddress
+    };
 
     this.instructorService.updateInstructor(instructor)
       .subscribe(_ => console.log("Ok!"));
