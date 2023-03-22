@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Instructor } from 'src/app/model/instructor.mode';
 import { Review } from 'src/app/model/review.model';
 import { ReviewService } from 'src/app/service/review.service';
 
@@ -21,7 +22,22 @@ export class DataReviewComponent implements OnInit {
   }
 
   updateReview(instructorReview: string, experienceRating: number) {
-    let reviewToSave: Review = { id: this.selectedReview.id, instructorReview, experienceRating}
+
+    let instructor: Instructor = {
+      id: this.selectedReview.instructor?.id, 
+      instructorName: this.selectedReview.instructor?.instructorName,
+      instructorSurname: this.selectedReview.instructor?.instructorSurname,
+      drivingSchoolName: this.selectedReview.instructor?.drivingSchoolName,
+      drivingSchoolAddress: this.selectedReview.instructor?.drivingSchoolAddress
+    }
+
+    let reviewToSave: Review = { 
+      id: this.selectedReview.id, 
+      instructorReview, 
+      experienceRating,
+      instructor: instructor
+    }
+
 
     this.reviewService.updateReview(reviewToSave)
       .subscribe(_ => console.log("ok"));

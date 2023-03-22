@@ -5,6 +5,7 @@
       <tr>
         <th>Review</th>
         <th>Rating</th>
+        <th>Instructor</th>
         <th>Operations</th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@
         <td *ngIf="review.experienceRating == 1"><i
             class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
         </td>
+        <td>{{review.instructor?.instructorName}}, {{review.instructor?.instructorSurname}}</td>
         <td>
           <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons">delete</i></button>
           <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons">edit</i></button>

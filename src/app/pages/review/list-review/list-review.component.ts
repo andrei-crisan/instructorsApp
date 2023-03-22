@@ -19,7 +19,6 @@ export class ListReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllReviews();
-    this.findReviewById(13);                          //revenire, harDcodede value
   }
 
   findAllReviews() {

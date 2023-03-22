@@ -40,9 +40,19 @@ export class AddReviewComponent implements OnInit {
 
     var ara: Review[] = [];
 
-    let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
-    let instructor: Instructor = { instructorName, instructorSurname, reviews: ara, drivingSchoolName, drivingSchoolAddress };
-    let reviewToSave: Review = { instructorReview, experienceRating: experienceRatingToSend, instructor: instructor }
+    // let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
+    let instructor: Instructor = { 
+      instructorName, 
+      instructorSurname, 
+      reviews: ara, 
+      drivingSchoolName, 
+      drivingSchoolAddress };
+
+    let reviewToSave: Review = { 
+      instructorReview, 
+      experienceRating: experienceRatingToSend, 
+      instructor: instructor 
+    };
 
     this.reviewService.saveReview(reviewToSave)
       .subscribe(_ => console.log("ok"));

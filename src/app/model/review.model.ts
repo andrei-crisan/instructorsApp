@@ -6,3 +6,4 @@ export class Review{
     experienceRating: number;
     instructor?: Instructor;
 }
+

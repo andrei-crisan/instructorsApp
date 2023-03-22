@@ -3,10 +3,10 @@ import { School } from "./school.model";
 
 export class Instructor{
     id?: number;
-    instructorName: string;
-    instructorSurname: string;
+    instructorName?: string;
+    instructorSurname?: string;
     drivingSchooldId?: number;
-    drivingSchoolName : string;
-    drivingSchoolAddress: string;
+    drivingSchoolName? : string;
+    drivingSchoolAddress?: string;
     reviews?: Review[] = [];
 }
