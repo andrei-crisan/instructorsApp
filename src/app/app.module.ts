@@ -22,9 +22,12 @@ import { FormsModule } from '@angular/forms';
 import { DataSchoolComponent } from './pages/school/data-school/data-school.component';
 import { DataInstructorComponent } from './pages/instructor/data-instructor/data-instructor.component';
 import { DataReviewComponent } from './pages/review/data-review/data-review.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule} from '@angular/material/card';
 import { DetailsInstructorComponent } from './pages/instructor/details-instructor/details-instructor.component';
 import { SearchComponent } from './pages/search/search.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptorProvider } from './auth.interceptor';
 
 
 @NgModule({
@@ -41,7 +44,8 @@ import { SearchComponent } from './pages/search/search.component';
     DataInstructorComponent,
     DataReviewComponent,
     DetailsInstructorComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,10 +61,10 @@ import { SearchComponent } from './pages/search/search.component';
     MatListModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
-
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
