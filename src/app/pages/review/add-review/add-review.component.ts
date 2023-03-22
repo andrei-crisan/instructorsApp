@@ -11,6 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./add-review.component.css']
 })
 export class AddReviewComponent implements OnInit {
+  ratingSentiment: string[] = ['positive', 'negative'];
 
   constructor(private reviewService: ReviewService, private matDialog: MatDialogRef<AddReviewComponent>) { }
 
@@ -23,17 +24,25 @@ export class AddReviewComponent implements OnInit {
 
   saveReview(
     instructorReview: string,
-    experienceRating: number,
+    experienceRating: string,
     instructorName: string,
     instructorSurname: string,
     drivingSchoolName: string,
     drivingSchoolAddress: string) {
 
+      let experienceRatingToSend : number  = 0;
+
+      if(experienceRating == 'positive'){
+        experienceRatingToSend = 2;
+      } else {
+        experienceRatingToSend = 1;
+      }
+
     var ara: Review[] = [];
 
     let drivingSchool: School = { drivingSchoolName, drivingSchoolAddress }
     let instructor: Instructor = { instructorName, instructorSurname, reviews: ara, drivingSchool };
-    let reviewToSave: Review = { instructorReview, experienceRating, instructor: instructor }
+    let reviewToSave: Review = { instructorReview, experienceRating: experienceRatingToSend, instructor: instructor }
 
     this.reviewService.saveReview(reviewToSave)
       .subscribe(_ => console.log("ok"));

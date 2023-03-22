@@ -5,10 +5,17 @@
       <mat-label>Leave a review</mat-label>
       <textarea matInput placeholder="Ex. Experienta a fost una..." #reviewInput></textarea>
     </mat-form-field>
-    <mat-form-field class="rating">
-      <mat-label>Rating </mat-label>
-      <input matInput type="number" #ratingInput>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rating</mat-label>
+      <mat-select #ratingInput>
+        <mat-option *ngFor="let rating of ratingSentiment" [value]="rating" >
+          {{rating}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+
+
     <br>
     <mat-form-field class="instructor-name">
       <mat-label>Instructor's name </mat-label>
@@ -35,7 +42,7 @@
         <li>
           <button mat-raised-button (click)="saveReview(
                 reviewInput.value, 
-                ratingInput.valueAsNumber, 
+                ratingInput.value,
                 instructorName.value, 
                 instructorSurname.value, 
                 drivingSchool.value, 

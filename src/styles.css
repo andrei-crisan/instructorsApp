@@ -5,6 +5,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: white;
     background-color: #034437;
   }
+  .mat-sentiment-negative{
+    color: rgb(199, 2, 2);
+  }
+  .mat-sentiment-positive{
+    color: rgb(0, 128, 49);
+  }
   .mat-customGreenCancel {
     color: white;
     background-color: #478b7e;
