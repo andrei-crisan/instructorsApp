@@ -8,9 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   initForm() {
@@ -20,5 +22,5 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  register(){}
+  register() { }
 }

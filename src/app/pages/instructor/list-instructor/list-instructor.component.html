@@ -6,14 +6,18 @@
         <th>Name</th>
         <th>Surname</th>
         <th>Driving school</th>
+        <th>Reviews</th>
         <th>Operations</th>
       </tr>
     </thead>
     <tbody *ngIf="searchResponseParameter<=0">
       <tr *ngFor="let instructor of instructors">
-        <td (click)="openDetailsModaComponent(instructor)">{{instructor.instructorName}}</td>
+        <td>{{instructor.instructorName}}</td>
         <td>{{instructor.instructorSurname}}
-          <td>{{instructor.drivingSchoolName}}, {{instructor.drivingSchoolAddress}}</td>
+        <td>{{instructor.drivingSchoolName}}, {{instructor.drivingSchoolAddress}}</td>
+        <td *ngIf="instructor.reviews?.length == 0 "><i class="material-icons">exposure_zero</i></td>
+        <td *ngIf="instructor.reviews?.length !=0 " (click)="openDetailsModaComponent(instructor)">
+          <i class="material-icons">reviews</i></td>
         <td>
           <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
               class="material-icons">delete</i></button>
@@ -29,7 +33,8 @@
         <td>
           <button id="delete" (click)="deleteSelectedInstructor(instructorById.id)"><i
               class="material-icons">delete</i></button>
-          <button id="update" (click)="openDataModalComponent(instructorById)"><i class="material-icons">edit</i></button>
+          <button id="update" (click)="openDataModalComponent(instructorById)"><i
+              class="material-icons">edit</i></button>
         </td>
       </tr>
     </tbody>
