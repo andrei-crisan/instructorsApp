@@ -23,7 +23,6 @@ export class AuthService {
       .subscribe(result => {
         localStorage.setItem('instructors auth', result.token);
         this._isLoggedIn$.next(true);
-        console.log(result.token); //we have the token
       })
   }
 
