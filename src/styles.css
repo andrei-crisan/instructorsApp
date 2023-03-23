@@ -19,12 +19,12 @@ body {
 }
 
 .mat-sentiment-negative {
-  float: right;
+  /* float: right; */
   color: rgb(199, 2, 2);
 }
 
 .mat-sentiment-positive {
-  float:right;
+  /* float:right; */
   color: rgb(0, 128, 49);
 }
 

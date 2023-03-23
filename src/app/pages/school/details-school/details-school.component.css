@@ -49,3 +49,11 @@ button {
 #instructor-surname-of-school{
     float: right;
 }
+
+.dialog-titles{
+    float: right;
+}
+.driving-school-name{
+    font-weight: bold;
+    font-size: 15px;
+}
