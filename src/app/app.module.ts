@@ -30,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorProvider } from './auth.interceptor';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './pages/register/register.component';
+import { DetailsSchoolComponent } from './pages/school/details-school/details-school.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { RegisterComponent } from './pages/register/register.component';
     DetailsInstructorComponent,
     SearchComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DetailsSchoolComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,17 @@
+<h3><b>f a m e | or shame -></b> "{{selectedSchool.drivingSchoolName}}"</h3>
+<div class="display-scene-details">
+    <table class="resultTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let instructor of selectedSchool.instructors">
+                <td>{{instructor.instructorName}}</td>
+                <td>{{instructor.instructorSurname}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

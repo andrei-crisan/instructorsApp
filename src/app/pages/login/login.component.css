@@ -1,14 +1,28 @@
 
 .login-box{
     padding-top: 100px;
-    display: flex;
     justify-content: center;
-    align-items: stretch;
-    text-align: center;
+    display: flex;
+
 }
 
 .login-card mat-card{
-    padding: 70px;
     background-color: beige;
-
+    align-items: center;
+    width: 350px;
+    text-align: center;
+    box-shadow: 5px 15px 15px rgb(70, 70, 70);
+}
+.login-card p{    
+    color: rgb(255, 255, 255);
+    letter-spacing: 16px;
+    font-size: 12px;
+}
+.butoane li{
+    padding: 5px;
+    display: inline;
+}
+.containerAdd {
+    padding: 20px;
+    border: 1px solid rgb(7, 82, 72);
 }

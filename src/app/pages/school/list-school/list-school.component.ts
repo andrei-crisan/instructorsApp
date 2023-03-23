@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { School } from 'src/app/model/school.model';
 import { SchoolService } from 'src/app/service/school.service';
 import { DataSchoolComponent } from '../data-school/data-school.component';
+import { DetailsSchoolComponent } from '../details-school/details-school.component';
 
 @Component({
   selector: 'app-list-school',
@@ -42,6 +43,12 @@ export class ListSchoolComponent implements OnInit {
   openDataModalComponent(schoolId) {
     console.log(schoolId);
     this.matDialog.open(DataSchoolComponent, { data: schoolId });
+  }
+
+  openDetailsModalComponent(school: School) {
+    if (school.instructors?.length != 0) {
+      this.matDialog.open(DetailsSchoolComponent, { data: school });
+    }
   }
 
 }

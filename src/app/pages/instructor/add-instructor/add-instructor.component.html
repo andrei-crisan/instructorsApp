@@ -1,5 +1,4 @@
-<h3>New instructor</h3>
-
+<h3>A new instructor... or?</h3>
 <form class="new-instructor">
     <mat-form-field class="instructor-name">
       <mat-label>InstructorName: </mat-label>
@@ -28,14 +27,14 @@
     <nav>
       <ul>
         <li>
-        <button mat-raised-button (click)="saveInstructor(
+        <button mat-raised-button color="customGreen" (click)="saveInstructor(
             instructorName.value, 
             instructorSurname.value, 
             drivingSchoolName.value, 
             drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
         </li>
         <li>
-          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+          <button mat-raised-button color="customGreenCancel" (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
         </li>
       </ul>
     </nav>

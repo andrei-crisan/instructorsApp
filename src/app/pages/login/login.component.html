@@ -1,10 +1,10 @@
 <div class="login-box">
-<br>
 <div class="login-card">
 <mat-card>
   <mat-toolbar color="customGreen">
     <span>Login</span>
   </mat-toolbar>
+  <br>
 <form class="LOGIN" [formGroup]="formGroup" (ngSubmit)="login()">
     <mat-form-field class="USERNAME">
       <mat-label>Username: </mat-label>
@@ -16,11 +16,14 @@
       <input matInput type="password" formControlName="password">
     </mat-form-field>
     <br>
-    <button mat-raised-button type="submit"><i class="material-icons">login</i></button>
+    <button mat-raised-button color="customGreen" type="submit"><i class="material-icons">login</i></button>
   </form>
   <br>
-  <br>
   <a routerLink="/register">r e g i s t e r</a>
+  <mat-toolbar color="customGreen">
+    <p>d r i v e | safe</p>
+  </mat-toolbar>
   </mat-card>
 </div>
 </div>
+

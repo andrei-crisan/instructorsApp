@@ -1,5 +1,4 @@
-<div class="containerAdd">
-  <p>New review</p>
+<h3>Hit the... road!</h3>
   <form class="new-review">
     <mat-form-field class="example-full-width">
       <mat-label>Leave a review</mat-label>
@@ -40,7 +39,7 @@
     <nav>
       <ul>
         <li>
-          <button mat-raised-button (click)="saveReview(
+          <button color="customGreen" mat-raised-button (click)="saveReview(
                 reviewInput.value, 
                 ratingInput.value,
                 instructorName.value, 
@@ -49,8 +48,7 @@
                 drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
         </li>
         <li>
-          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+          <button color="customGreenCancel" mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
         </li>
       </ul>
     </nav>
-    </div>
