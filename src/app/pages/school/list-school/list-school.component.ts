@@ -13,6 +13,7 @@ import { DetailsSchoolComponent } from '../details-school/details-school.compone
 export class ListSchoolComponent implements OnInit {
   schoolByid: School;
   schools: Array<School> = [];
+  searchKey: string;
 
   constructor(
     private schoolService: SchoolService,

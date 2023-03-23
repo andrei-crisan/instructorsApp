@@ -1,26 +1,29 @@
 <div class="display-scene">
   <h2> d r i v i n g S c h o o l s | not factories</h2>
-<table class="resultTable">
+  <input class="search-bar" type="text" name="search" [(ngModel)]="searchKey" placeholder="alzheimer">
+  <table class="resultTable">
     <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Instructors</th>
-      <th>Operations</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let school of schools">
-      <td>{{school.drivingSchoolName}}</td>
-      <td>{{school.drivingSchoolAddress}}</td>
-      <td *ngIf="school.instructors?.length == 0"><i class="material-icons">exposure_zero</i></td>
-      <td *ngIf="school.instructors?.length != 0" (click)="openDetailsModalComponent(school)">
-        <i class="material-icons">emoji_people</i></td>
-      <td>
-        <button class="delete" (click)="deleteSelectedDrivingSchool(school.id)"><i class="material-icons">delete</i></button>
-        <button id="update" (click)="openDataModalComponent(school)"><i class="material-icons">edit</i></button>
-      </td>
-    </tr>
-  </tbody>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Instructors</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let school of schools | filter:searchKey">
+        <td>{{school.drivingSchoolName}}</td>
+        <td>{{school.drivingSchoolAddress}}</td>
+        <td *ngIf="school.instructors?.length == 0"><i class="material-icons">exposure_zero</i></td>
+        <td *ngIf="school.instructors?.length != 0" (click)="openDetailsModalComponent(school)">
+          <i class="material-icons">emoji_people</i>
+        </td>
+        <td>
+          <button (click)="deleteSelectedDrivingSchool(school.id)"><i
+              class="material-icons mat-delete">delete</i></button>
+          <button (click)="openDataModalComponent(school)"><i class="material-icons mat-edit">edit</i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>

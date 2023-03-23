@@ -45,3 +45,7 @@ button {
 .resultTable tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+
+.search-bar{
+    justify-content: center;
+}

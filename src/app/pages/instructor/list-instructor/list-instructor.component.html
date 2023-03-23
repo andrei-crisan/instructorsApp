@@ -1,5 +1,6 @@
 <div class="display-scene">
   <h2> i n s t r u c t o r s | or devils</h2>
+  <input class="search-bar" type="text" name="search" [(ngModel)]="searchKey" placeholder="alzheimer">
   <table class="resultTable">
     <thead>
       <tr>
@@ -11,21 +12,21 @@
       </tr>
     </thead>
     <tbody *ngIf="searchResponseParameter<=0">
-      <tr *ngFor="let instructor of instructors">
+      <tr *ngFor="let instructor of instructors | filter:searchKey">
         <td>{{instructor.instructorName}}</td>
         <td>{{instructor.instructorSurname}}
         <td>{{instructor.drivingSchoolName}}, {{instructor.drivingSchoolAddress}}</td>
-        <td *ngIf="instructor.reviews?.length == 0 "><i class="material-icons">exposure_zero</i></td>
-        <td *ngIf="instructor.reviews?.length !=0 " (click)="openDetailsModaComponent(instructor)">
-          <i class="material-icons">reviews</i></td>
+        <td *ngIf="instructor.reviews?.length == 0"><i class="material-icons">exposure_zero</i></td>
+        <td *ngIf="instructor.reviews?.length != 0" (click)="openDetailsModaComponent(instructor)">
+          <i class="material-icons mat-review">reviews</i></td>
         <td>
           <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
-              class="material-icons">delete</i></button>
-          <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons">edit</i></button>
+              class="material-icons mat-delete">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons mat-edit">edit</i></button>
         </td>
       </tr>
     </tbody>
-    <tbody *ngIf="searchResponseParameter>0 && instructorById!=null">
+    <tbody *ngIf="searchResponseParameter > 0 && instructorById != null">
       <tr>
         <td (click)="openDetailsModaComponent(instructorById)">{{instructorById.instructorName}}</td>
         <td>{{instructorById.instructorSurname}}</td>

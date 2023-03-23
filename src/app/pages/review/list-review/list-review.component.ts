@@ -14,6 +14,7 @@ export class ListReviewComponent implements OnInit {
   selectorReview: boolean = false;
   reviewById: Review;
   reviews: Array<Review> = [];
+  searchKey: string;
 
   constructor(private location: Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
 

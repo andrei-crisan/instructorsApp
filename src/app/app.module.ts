@@ -31,6 +31,7 @@ import { AuthInterceptorProvider } from './auth.interceptor';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailsSchoolComponent } from './pages/school/details-school/details-school.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { DetailsSchoolComponent } from './pages/school/details-school/details-sc
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    Ng2SearchPipeModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

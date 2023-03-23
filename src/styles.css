@@ -19,20 +19,26 @@ body {
 }
 
 .mat-sentiment-negative {
-  /* float: right; */
   color: rgb(199, 2, 2);
 }
 
 .mat-sentiment-positive {
-  /* float:right; */
   color: rgb(0, 128, 49);
 }
-
+.mat-delete{
+  color: rgb(95, 6, 6);
+}
+.mat-edit{
+  color: #034437;
+}
+.mat-review{
+  color: #62838d;
+}
 .display-scene {
   margin: 50px;
   padding: 0px;
 }
 
-.display-scene h2 {
+/* .display-scene h2 {
   text-align: center;
-}
+} */

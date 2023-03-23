@@ -1,5 +1,6 @@
 <div class="display-scene">
   <h2> r e v i e w s | or curses</h2>
+  <input class="search-bar" type="text" name="search" [(ngModel)]="searchKey" placeholder="alzheimer">
   <table class="resultTable">
     <thead>
       <tr>
@@ -10,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let review of reviews">
+      <tr *ngFor="let review of reviews | filter:searchKey">
         <td>{{review.instructorReview}}</td>
         <td *ngIf="review.experienceRating == 2"><i
             class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>
@@ -19,8 +20,8 @@
         </td>
         <td>{{review.instructor?.instructorName}}, {{review.instructor?.instructorSurname}}</td>
         <td>
-          <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons">delete</i></button>
-          <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons">edit</i></button>
+          <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons mat-delete">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons mat-edit">edit</i></button>
         </td>
       </tr>
     </tbody>

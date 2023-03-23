@@ -16,6 +16,7 @@ export class ListInstructorComponent implements OnInit {
   instructorById: Instructor;
   instructors: Array<Instructor> = [];
   searchResponseParameter: number;
+  searchKey : string;
 
   constructor(
     private instructorService: InstructorService,
