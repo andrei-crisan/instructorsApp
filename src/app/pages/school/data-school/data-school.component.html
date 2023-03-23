@@ -4,6 +4,7 @@
       <mat-label>Driving school: </mat-label>
       <input matInput #drivingSchoolName value="{{selectedSchool.drivingSchoolName}}">
     </mat-form-field>
+    <br>
     <mat-form-field class="driving-school-address">
       <mat-label>Driving's school address: </mat-label>
       <input matInput #drivingSchoolAddress value="{{selectedSchool.drivingSchoolAddress}}">
@@ -13,12 +14,12 @@
     <nav>
       <ul>
         <li>
-        <button mat-raised-button (click)="updateDrivingSchool(
+        <button mat-raised-button color="customGreen" (click)="updateDrivingSchool(
             drivingSchoolName.value, 
             drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
         </li>
         <li>
-          <button mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+          <button mat-raised-button color="customGreenCancel" (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
         </li>
       </ul>
     </nav>

@@ -49,3 +49,14 @@ button {
 .sentiment-pos{
     float: right;
 }
+
+.display-scene-details p{
+    font-weight: bold;
+    text-align: center;
+}
+.positive-review-color {
+    color: rgb(0, 87, 43);
+}
+.negative-review-color {
+    color: rgb(155, 0, 0);
+}

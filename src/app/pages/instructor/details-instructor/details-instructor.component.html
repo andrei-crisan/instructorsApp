@@ -23,6 +23,6 @@
     </tbody>
   </table>
   <br>
-  <p>Positive reviews: {{ positiveReviewsPercentage | number : '1.2-2'}}% | Negative reviews: {{
-    negativeReviewsPercentage | number : '1.2-2'}}%</p>
+  <p>Positive reviews: <span class="positive-review-color">{{ positiveReviewsPercentage | number : '1.2-2'}}%</span> | 
+    Negative reviews: <span class="negative-review-color">{{negativeReviewsPercentage | number : '1.2-2'}}%</span></p>
 </div>
