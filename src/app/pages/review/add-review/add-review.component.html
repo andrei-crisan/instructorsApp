@@ -5,7 +5,7 @@
       <textarea matInput placeholder="Ex. Experienta a fost una..." #reviewInput></textarea>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field >
       <mat-label>Rating</mat-label>
       <mat-select #ratingInput>
         <mat-option *ngFor="let rating of ratingSentiment" [value]="rating" >
@@ -13,8 +13,6 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-
-
     <br>
     <mat-form-field class="instructor-name">
       <mat-label>Instructor's name </mat-label>
@@ -31,7 +29,7 @@
       <input matInput #drivingSchool>
     </mat-form-field>
     <mat-form-field class="driving-school-address">
-      <mat-label>Driving's school address </mat-label>
+      <mat-label>school's address </mat-label>
       <input matInput #drivingSchoolAddress>
     </mat-form-field>
   </form>

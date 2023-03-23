@@ -6,14 +6,12 @@
   <table class="resultTable">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Review</th>
         <th>Rating</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let review of selectedInstructor.reviews">
-        <td>{{review.id}}</td>
         <td>{{review.instructorReview}}</td>
         <td *ngIf="review.experienceRating == 2"><i
             class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>

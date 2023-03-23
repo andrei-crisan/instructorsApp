@@ -1,24 +1,38 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .mat-customGreen {
-    color: white;
-    background-color: #034437;
-  }
-  .mat-sentiment-negative{
-    color: rgb(199, 2, 2);
-  }
-  .mat-sentiment-positive{
-    color: rgb(0, 128, 49);
-  }
-  .mat-customGreenCancel {
-    color: white;
-    background-color: #478b7e;
-  }
-  .display-scene {
-    margin: 50px;
-    padding:0px;
+  color: white;
+  background-color: #034437;
 }
+
+.mat-customGreenCancel {
+  color: white;
+  background-color: #478b7e;
+}
+
+.mat-sentiment-negative {
+  float: right;
+  color: rgb(199, 2, 2);
+}
+
+.mat-sentiment-positive {
+  float:right;
+  color: rgb(0, 128, 49);
+}
+
+.display-scene {
+  margin: 50px;
+  padding: 0px;
+}
+
 .display-scene h2 {
   text-align: center;
 }

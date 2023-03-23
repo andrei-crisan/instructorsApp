@@ -1,5 +1,5 @@
 <div class="display-scene">
-  <h2> d r i v i n g S c h o o l s | not licenses factories</h2>
+  <h2> d r i v i n g S c h o o l s | not factories</h2>
 <table class="resultTable">
     <thead>
     <tr>
@@ -17,7 +17,7 @@
       <td *ngIf="school.instructors?.length != 0" (click)="openDetailsModalComponent(school)">
         <i class="material-icons">emoji_people</i></td>
       <td>
-        <button class="heroes" (click)="deleteSelectedDrivingSchool(school.id)"><i class="material-icons">delete</i></button>
+        <button class="delete" (click)="deleteSelectedDrivingSchool(school.id)"><i class="material-icons">delete</i></button>
         <button id="update" (click)="openDataModalComponent(school)"><i class="material-icons">edit</i></button>
       </td>
     </tr>

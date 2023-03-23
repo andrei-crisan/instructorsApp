@@ -10,7 +10,7 @@
         <tbody>
             <tr *ngFor="let instructor of selectedSchool.instructors">
                 <td>{{instructor.instructorName}}</td>
-                <td>{{instructor.instructorSurname}}</td>
+                <td><span id="instructor-surname-of-school">{{instructor.instructorSurname}}</span></td>
             </tr>
         </tbody>
     </table>

@@ -12,7 +12,7 @@ button {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 350px;
     width: 100%;
     margin: auto;
     margin-top: 10px;
@@ -44,4 +44,8 @@ button {
 
 .resultTable tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+
+#instructor-surname-of-school{
+    float: right;
 }

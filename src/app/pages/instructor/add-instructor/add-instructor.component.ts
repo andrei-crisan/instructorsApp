@@ -33,6 +33,7 @@ export class AddInstructorComponent implements OnInit {
       .subscribe(_ => console.log("Ok!"));
 
     this.closeModalComponent();
+    location.reload();
   }
 
   //TODO: VERIFICARE CONSISTENTA OBIECT, INSTRUCTOR DEPENDENT DE SCOALA;

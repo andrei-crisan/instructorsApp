@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { School } from 'src/app/model/school.model';
@@ -17,8 +16,7 @@ export class ListSchoolComponent implements OnInit {
 
   constructor(
     private schoolService: SchoolService,
-    private matDialog: MatDialog,
-    private location: Location) { }
+    private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAllDrivingSchools();
