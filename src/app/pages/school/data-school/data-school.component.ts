@@ -33,8 +33,8 @@ export class DataSchoolComponent implements OnInit {
 
     this.schoolService.updateDrivingSchool(drivingSchool)
       .subscribe(_ => console.log("Ok!"));
-
     this.closeModalComponent();
+    location.reload();
   }
 
 

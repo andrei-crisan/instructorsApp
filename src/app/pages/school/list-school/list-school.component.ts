@@ -36,7 +36,7 @@ export class ListSchoolComponent implements OnInit {
   deleteSelectedDrivingSchool(drivingSchoolId) {
     this.schoolService.deleteDrivingSchoolById(drivingSchoolId)
       .subscribe(_ => console.log("Ok!"));
-     this.location.back();
+      location.reload();
   }
 
   openDataModalComponent(schoolId) {

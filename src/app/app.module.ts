@@ -28,6 +28,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorProvider } from './auth.interceptor';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { AuthInterceptorProvider } from './auth.interceptor';
     DataReviewComponent,
     DetailsInstructorComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
@@ -62,7 +65,8 @@ import { AuthInterceptorProvider } from './auth.interceptor';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

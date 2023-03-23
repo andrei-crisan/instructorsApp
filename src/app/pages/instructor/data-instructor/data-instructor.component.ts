@@ -46,6 +46,7 @@ export class DataInstructorComponent implements OnInit {
       .subscribe(_ => console.log("Ok!"));
 
     this.closeModalComponent();
+    location.reload();
   }
 
 }

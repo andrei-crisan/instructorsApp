@@ -58,5 +58,6 @@ export class AddReviewComponent implements OnInit {
       .subscribe(_ => console.log("ok"));
 
     this.closeModalComponent();
+    location.reload();
   }
 }

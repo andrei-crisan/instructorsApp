@@ -1,0 +1,14 @@
+
+.login-box{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+}
+
+.login-card mat-card{
+    padding: 70px;
+    background-color: beige;
+
+}

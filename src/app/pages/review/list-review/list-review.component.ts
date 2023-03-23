@@ -34,8 +34,7 @@ export class ListReviewComponent implements OnInit {
   deleteSelectedReview(reviewId) {
     this.reviewService.deleteReviewById(reviewId)
       .subscribe(_ => console.log("Ok!"));
-    this.location.back();
-
+      location.reload();
   }
 
   openDataModalComponent(review) {

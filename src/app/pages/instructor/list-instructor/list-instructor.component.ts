@@ -42,7 +42,7 @@ export class ListInstructorComponent implements OnInit {
   deleteSelectedInstructor(instructorId) {
     this.instructorService.deleteInstructor(instructorId)
       .subscribe(_ => console.log("Ok!"));
-    this.location.back();
+      location.reload();
   }
 
   openDataModalComponent(instructor) {

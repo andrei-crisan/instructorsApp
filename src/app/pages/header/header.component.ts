@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Select } from 'src/app/model/select.model';
+import { AuthService } from 'src/app/service/auth.service';
 import { AddInstructorComponent } from '../instructor/add-instructor/add-instructor.component';
 import { AddReviewComponent } from '../review/add-review/add-review.component';
 import { AddSchoolComponent } from '../school/add-school/add-school.component';
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit {
 
   public selectedEntity: number = 1;
 
-  constructor(private router: Router, private matDialog: MatDialog) { }
+  constructor(private router: Router, private matDialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
@@ -39,9 +41,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  
-  closeModalComponents(){
 
+  closeModalComponents() {
+    //TODo: implt
 
   }
 
@@ -57,8 +59,12 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  openModalSearchComponent(){
+  openModalSearchComponent() {
     this.matDialog.open(SearchComponent);
   }
 
+  logout() {
+    localStorage.removeItem('instructors auth');
+    location.reload();
+  }
 }

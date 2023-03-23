@@ -1,14 +1,23 @@
-<h3>LOGIN PAGE</h3>
-
+<div class="login-box">
+<br>
+<div class="login-card">
+<mat-card>
+  <mat-toolbar color="customGreen">
+    <span>Login</span>
+  </mat-toolbar>
 <form class="LOGIN" [formGroup]="formGroup" (ngSubmit)="login()">
     <mat-form-field class="USERNAME">
       <mat-label>Username: </mat-label>
       <input matInput formControlName="username">
     </mat-form-field>
-
+<br>
     <mat-form-field class="password">
       <mat-label>Password: </mat-label>
-      <input matInput  formControlName="password">
+      <input matInput type="password" formControlName="password">
     </mat-form-field>
-    <button type="submit">login</button>
+    <br>
+    <button mat-raised-button type="submit"><i class="material-icons">login</i></button>
   </form>
+  </mat-card>
+</div>
+</div>
