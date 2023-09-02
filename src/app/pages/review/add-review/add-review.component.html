@@ -1,44 +1,44 @@
 <h3>Hit the... road!</h3>
-  <form class="new-review">
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a review</mat-label>
-      <textarea matInput placeholder="Ex. Experienta a fost una..." #reviewInput></textarea>
-    </mat-form-field>
-
-    <mat-form-field >
-      <mat-label>Rating</mat-label>
-      <mat-select #ratingInput>
-        <mat-option *ngFor="let rating of ratingSentiment" [value]="rating" >
-          {{rating}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="instructor-name">
-      <mat-label>Instructor's name </mat-label>
-      <input matInput #instructorName>
-    </mat-form-field>
-    <mat-form-field class="instructor-surname">
-      <mat-label>Instructor's surname </mat-label>
-      <input matInput #instructorSurname>
-    </mat-form-field>
-    <br>
-    <mat-form-field class="driving-school">
-      <mat-label>Driving school </mat-label>
-      <input matInput #drivingSchool>
-    </mat-form-field>
-    <mat-form-field class="driving-school-address">
-      <mat-label>school's address </mat-label>
-      <input matInput #drivingSchoolAddress>
-    </mat-form-field>
-  </form>
-  <div class="butoane">
-          <button color="customGreen" mat-raised-button (click)="saveReview(
+<form class="new-review">
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a review</mat-label>
+    <textarea matInput placeholder="Ex. Experienta a fost una..." #reviewInput></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <mat-select #ratingInput>
+      <mat-option *ngFor="let rating of ratingSentiment" [value]="rating">
+        {{rating}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="instructor-name">
+    <mat-label>Instructor's name </mat-label>
+    <input matInput #instructorName>
+  </mat-form-field>
+  <mat-form-field class="instructor-surname">
+    <mat-label>Instructor's surname </mat-label>
+    <input matInput #instructorSurname>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="driving-school">
+    <mat-label>Driving school </mat-label>
+    <input matInput #drivingSchool>
+  </mat-form-field>
+  <mat-form-field class="driving-school-address">
+    <mat-label>school's address </mat-label>
+    <input matInput #drivingSchoolAddress>
+  </mat-form-field>
+</form>
+<div class="butoane">
+  <button color="customGreen" mat-raised-button (click)="saveReview(
                 reviewInput.value, 
                 ratingInput.value,
                 instructorName.value, 
                 instructorSurname.value, 
                 drivingSchool.value, 
                 drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
-          <button color="customGreenCancel" mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
+  <button color="customGreenCancel" mat-raised-button (click)="closeModalComponent()"><i
+      class="material-icons">cancel</i></button>
 </div>

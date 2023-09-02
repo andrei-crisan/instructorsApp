@@ -1,38 +1,31 @@
 <h3>Update instructor</h3>
 
 <form class="update-instructor">
-    <mat-form-field class="instructor-name">
-      <mat-label>InstructorName: </mat-label>
-      <input matInput #instructorName value="{{selectedInstructor.instructorName}}">
-    </mat-form-field>
+  <mat-form-field class="instructor-name">
+    <mat-label>InstructorName: </mat-label>
+    <input matInput #instructorName value="{{selectedInstructor.instructorName}}">
+  </mat-form-field>
 
-    <mat-form-field class="instructor-surname">
-      <mat-label>InstructorSurname: </mat-label>
-      <input matInput #instructorSurname value="{{selectedInstructor.instructorSurname}}">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="driving-school">
-      <mat-label>DrivingSchool: </mat-label>
-      <input matInput #drivingSchoolName value="{{selectedInstructor.drivingSchoolName}}">
-    </mat-form-field>
-    <mat-form-field class="driving-school-address">
-      <mat-label>DrivingSchoolAddress: </mat-label>
-      <input matInput #drivingSchoolAddress value="{{selectedInstructor.drivingSchoolAddress}}">
-    </mat-form-field>
-  </form>
-  <div class="butoane">
-    <nav>
-      <ul>
-        <li>
-        <button mat-raised-button color="customGreen" (click)="updateInstructor(
+  <mat-form-field class="instructor-surname">
+    <mat-label>InstructorSurname: </mat-label>
+    <input matInput #instructorSurname value="{{selectedInstructor.instructorSurname}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="driving-school">
+    <mat-label>DrivingSchool: </mat-label>
+    <input matInput #drivingSchoolName value="{{selectedInstructor.drivingSchoolName}}">
+  </mat-form-field>
+  <mat-form-field class="driving-school-address">
+    <mat-label>DrivingSchoolAddress: </mat-label>
+    <input matInput #drivingSchoolAddress value="{{selectedInstructor.drivingSchoolAddress}}">
+  </mat-form-field>
+</form>
+<div class="butoane">
+  <button mat-raised-button color="customGreen" (click)="updateInstructor(
             instructorName.value, 
             instructorSurname.value, 
             drivingSchoolName.value, 
             drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
-        </li>
-        <li>
-          <button mat-raised-button color="customGreenCancel" (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
-        </li>
-      </ul>
-    </nav>
-    </div>
+  <button mat-raised-button color="customGreenCancel" (click)="closeModalComponent()"><i
+      class="material-icons">cancel</i></button>
+</div>
