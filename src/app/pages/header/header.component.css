@@ -34,3 +34,7 @@ img {
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
     border-radius: 10px;
 }
+
+i {
+    font-size: 30px;
+}
