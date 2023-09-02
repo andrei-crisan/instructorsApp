@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { DataSchoolComponent } from './pages/school/data-school/data-school.component';
 import { DataInstructorComponent } from './pages/instructor/data-instructor/data-instructor.component';
 import { DataReviewComponent } from './pages/review/data-review/data-review.component';
-import { MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { DetailsInstructorComponent } from './pages/instructor/details-instructor/details-instructor.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -32,8 +32,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailsSchoolComponent } from './pages/school/details-school/details-school.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     Ng2SearchPipeModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

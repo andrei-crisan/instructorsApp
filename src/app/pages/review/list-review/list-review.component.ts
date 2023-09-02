@@ -6,6 +6,7 @@ import { ReviewService } from 'src/app/service/review.service';
 import { DataReviewComponent } from '../data-review/data-review.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-review',
@@ -19,11 +20,16 @@ export class ListReviewComponent implements OnInit, AfterViewInit {
   reviews: Array<Review> = [];
   searchKey: string;
   displayedColumns: string[] = ['id', 'review', 'instructor', 'rating', 'actions'];
+  searchResponseParameter: number;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   
-  constructor(private location: Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
+  constructor(private location: Location, 
+    private reviewService: ReviewService, 
+    private matDialog: MatDialog, 
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getResponseFromSearchComponent();
     this.findAllReviews();
   }
 
@@ -61,5 +67,14 @@ export class ListReviewComponent implements OnInit, AfterViewInit {
     }
   }
 
+  getResponseFromSearchComponent() {
+    if (this.activatedRoute.snapshot.params['id'] > 0) {
+      this.searchResponseParameter = this.activatedRoute.snapshot.params['id'];
+      this.reviewService.getReviewById(this.searchResponseParameter)
+        .subscribe(x => this.reviewById = x);
+    } else {
+      this.searchResponseParameter = 0;
+    }
+  }
 
 }

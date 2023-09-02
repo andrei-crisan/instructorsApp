@@ -4,6 +4,7 @@ import { School } from 'src/app/model/school.model';
 import { SchoolService } from 'src/app/service/school.service';
 import { DataSchoolComponent } from '../data-school/data-school.component';
 import { DetailsSchoolComponent } from '../details-school/details-school.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-school',
@@ -14,12 +15,15 @@ export class ListSchoolComponent implements OnInit {
   schoolByid: School;
   schools: Array<School> = [];
   searchKey: string;
+  searchResponseParameter: number;
 
   constructor(
     private schoolService: SchoolService,
-    private matDialog: MatDialog) { }
+    private matDialog: MatDialog,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getResponseFromSearchComponent();
     this.findAllDrivingSchools();
   }
 
@@ -49,6 +53,16 @@ export class ListSchoolComponent implements OnInit {
   openDetailsModalComponent(school: School) {
     if (school.instructors?.length != 0) {
       this.matDialog.open(DetailsSchoolComponent, { data: school });
+    }
+  }
+
+  getResponseFromSearchComponent() {
+    if (this.activatedRoute.snapshot.params['id'] > 0) {
+      this.searchResponseParameter = this.activatedRoute.snapshot.params['id'];
+      this.schoolService.getDrivingSchoolById(this.searchResponseParameter)
+        .subscribe(x => this.schoolByid = x);
+    } else {
+      this.searchResponseParameter = 0;
     }
   }
 

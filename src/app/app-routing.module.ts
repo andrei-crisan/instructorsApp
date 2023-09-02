@@ -16,6 +16,8 @@ const routes: Routes = [
   {path: 'reviews', component: ListReviewComponent, canActivate:[IsAuthGuard]},
   {path: 'instructors', component: ListInstructorComponent, canActivate:[IsAuthGuard]},
   {path: 'instructors/:id', component: ListInstructorComponent, canActivate:[IsAuthGuard]},
+  {path: 'reviews/:id', component: ListReviewComponent, canActivate:[IsAuthGuard]},
+  {path: 'schools/:id', component: ListSchoolComponent, canActivate:[IsAuthGuard]},
   {path: 'schools', component: ListSchoolComponent, canActivate:[IsAuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

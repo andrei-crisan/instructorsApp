@@ -2,16 +2,25 @@
     <img src="assets/logo005r.png" alt="logo of site">
     <ul>
         <li><a href=""><i class="material-icons">home</i></a></li>
-        <li><a class="meniu" (click)="openModalSearchComponent()"><i class="material-icons">search</i></a></li>
-        <li><a class="meniu" (click)="showList()"><i class="material-icons">list_alt</i></a></li>
-        <li><a class="meniu" (click)="openModalComponent()"><i class="material-icons">add_box</i></a></li>
+        <li><a class="meniu"  [matMenuTriggerFor]="search"><i class="material-icons">search</i></a></li>
+        <mat-menu #search="matMenu">
+            <button mat-menu-item (click)="openModalSearchComponent(1)">Reviews</button>
+            <button mat-menu-item (click)="openModalSearchComponent(2)">Instructors</button>
+            <button mat-menu-item (click)="openModalSearchComponent(3)">DrivingSchools</button>
+        </mat-menu>
+        <li><a class="meniu" [matMenuTriggerFor]="list"><i class="material-icons">list_alt</i></a></li>
+        <mat-menu #list="matMenu">
+            <button mat-menu-item (click)="showList(1)">Reviews</button>
+            <button mat-menu-item (click)="showList(2)">Instructors</button>
+            <button mat-menu-item (click)="showList(3)">DrivingSchools</button>
+        </mat-menu>
+        <li><a class="meniu" [matMenuTriggerFor]="add"><i class="material-icons">add_box</i></a></li>
+        <mat-menu #add="matMenu">
+            <button mat-menu-item (click)="openAddEntityComponent(1)">Reviews</button>
+            <button mat-menu-item (click)="openAddEntityComponent(2)">Instructors</button>
+            <button mat-menu-item (click)="openAddEntityComponent(3)">DrivingSchools</button>
+        </mat-menu>
         <li><a class="meniu" (click)="logout()"><i class="material-icons">logout</i></a></li>
-        <li>
-        <select id="select-entity-list" [(ngModel)]="selectedEntity" >
-        <option *ngFor="let entitate of entityDropDownList" [value]="entitate.id">
-            {{entitate.entityName}}     
-        </option>
-         </select>
-        </li>
+
     </ul>
 </nav>

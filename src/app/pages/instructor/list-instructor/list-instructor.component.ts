@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -16,12 +15,11 @@ export class ListInstructorComponent implements OnInit {
   instructorById: Instructor;
   instructors: Array<Instructor> = [];
   searchResponseParameter: number;
-  searchKey : string;
+  searchKey: string;
 
   constructor(
     private instructorService: InstructorService,
     private matDialog: MatDialog,
-    private location: Location,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -32,7 +30,7 @@ export class ListInstructorComponent implements OnInit {
   findAllInstructors() {
     this.instructorService.getAllInstructor()
       .subscribe(x => this.instructors = x);
-      console.log(this.instructors);
+    console.log(this.instructors);
   }
 
   findInstructorById(instructorId: number) {
@@ -41,11 +39,11 @@ export class ListInstructorComponent implements OnInit {
   }
 
   deleteSelectedInstructor(instructorId) {
-    if(confirm("Are you sure?")){
-    this.instructorService.deleteInstructor(instructorId)
-      .subscribe(_ => console.log("Ok!"));
+    if (confirm("Are you sure?")) {
+      this.instructorService.deleteInstructor(instructorId)
+        .subscribe(_ => console.log("Ok!"));
     }
-      location.reload();
+    location.reload();
   }
 
   openDataModalComponent(instructor) {

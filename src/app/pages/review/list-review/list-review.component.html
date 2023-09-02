@@ -10,7 +10,7 @@
         <th>Operations</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="searchResponseParameter<=0">
       <tr *ngFor="let review of reviews | filter:searchKey">
         <td>{{review.instructorReview}}</td>
         <td *ngIf="review.experienceRating == 2"><i
@@ -25,4 +25,23 @@
         </td>
       </tr>
     </tbody>
+
+    <tbody *ngIf="searchResponseParameter > 0 && reviewById != null">
+      <tr>
+        <td>{{reviewById.instructorReview}}</td>
+        <td *ngIf="reviewById.experienceRating == 2"><i
+            class="material-icons mat-sentiment-positive">sentiment_satisfied_alt</i>
+        <td *ngIf="reviewById.experienceRating == 1"><i
+            class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
+        </td>
+        <td>{{reviewById.instructor?.instructorName}}, {{reviewById.instructor?.instructorSurname}}</td>
+        <td>
+          <button class="heroes" (click)="deleteSelectedReview(reviewById.id || 0)"><i class="material-icons mat-delete">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(reviewById)"><i class="material-icons mat-edit">edit</i></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
+
+
+  

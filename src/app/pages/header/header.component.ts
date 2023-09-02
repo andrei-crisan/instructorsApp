@@ -29,42 +29,40 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModalComponent() {
-    if (this.selectedEntity == 1) {
+  openAddEntityComponent(menuOption: number) {
+    if (menuOption == 1) {
       this.matDialog.open(AddReviewComponent);
     }
-    if (this.selectedEntity == 2) {
+    if (menuOption == 2) {
       this.matDialog.open(AddInstructorComponent);
     }
-    if (this.selectedEntity == 3) {
+    if (menuOption == 3) {
       this.matDialog.open(AddSchoolComponent);
     }
   }
 
-
-  closeModalComponents() {
-    //TODo: implt
-
-  }
-
-  showList() {
-    if (this.selectedEntity == 1) {
+  showList(menuOption: number) {
+    if (menuOption == 1) {
       this.router.navigateByUrl("/reviews");
     }
-    if (this.selectedEntity == 2) {
+    if (menuOption == 2) {
       this.router.navigateByUrl("/instructors");
     }
-    if (this.selectedEntity == 3) {
+    if (menuOption == 3) {
       this.router.navigateByUrl("/schools");
     }
   }
 
-  openModalSearchComponent() {
-    this.matDialog.open(SearchComponent);
+  openModalSearchComponent(option: number) {
+    this.matDialog.open(SearchComponent, {
+      data: option
+    });
   }
 
   logout() {
-    localStorage.removeItem('instructors auth');
-    location.reload();
+    if (confirm("Logging out?")) {
+      localStorage.removeItem('instructors auth');
+      location.reload();
+    }
   }
 }

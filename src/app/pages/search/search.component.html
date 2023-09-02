@@ -1,21 +1,20 @@
 <mat-form-field appearance="outline">
-    <mat-label>ID: </mat-label>
-    <input type="number" #entityId matInput placeholder="id entitate">
-    <mat-icon matSuffix><i class="material-icons">data_object</i></mat-icon>
-  </mat-form-field>
-  <br>
-
-  <div class="butoane">
-    <nav>
-      <ul>
-        <li>
-        <button (click)="findEntity(entityId.value)" mat-raised-button color="customGreen"><i
+  <mat-label>ID: </mat-label>
+  <input type="number" #entityId matInput placeholder="id entitate">
+  <mat-icon matSuffix><i class="material-icons">data_object</i></mat-icon>
+</mat-form-field>
+<br>
+<div class="butoane">
+  <nav>
+    <ul>
+      <li>
+        <button (click)="findEntity(entityId.valueAsNumber)" mat-raised-button color="customGreen"><i
             class="material-icons">search</i></button>
-          </li>
-          <li>
-        <button (click)="getBack()" mat-raised-button color="customGreenCancel"><i class="material-icons">cancel</i></button>
       </li>
-      </ul>
-     </nav>
+      <li>
+        <button (click)="getBack()" mat-raised-button color="customGreenCancel"><i
+            class="material-icons">cancel</i></button>
+      </li>
+    </ul>
+  </nav>
 </div>
-  

@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Instructor } from 'src/app/model/instructor.mode';
-import { Review } from 'src/app/model/review.model';
 import { InstructorService } from 'src/app/service/instructor.service';
-import { ReviewService } from 'src/app/service/review.service';
+
 
 @Component({
   selector: 'app-search',
@@ -16,27 +14,33 @@ export class SearchComponent implements OnInit {
   instructors: Instructor[] = [];
 
   constructor(
-    private router: Router, 
-    private matDialogRef : MatDialogRef<SearchComponent>, private instructorService: InstructorService) { }
+    private router: Router,
+    private matDialogRef: MatDialogRef<SearchComponent>, private instructorService: InstructorService,
+    @Inject(MAT_DIALOG_DATA) public data: number) { }
 
   ngOnInit(): void {
-    this.searchFor();
   }
 
-  findEntity(entityId) {
-    this.router.navigateByUrl('/instructors/'.concat(entityId));
-    this.getBack();
+  findEntity(entityId: number) {
+    switch (this.data) {
+      case 1:
+        this.router.navigateByUrl(`/reviews/${entityId}`);
+        this.getBack();
+        break;
+      case 2:
+        this.router.navigateByUrl(`/instructors/${entityId}`);
+        this.getBack();
+        break;
+      case 3:
+        this.router.navigateByUrl(`/schools/${entityId}`);
+        this.getBack();
+        break;
+    }
   }
 
   getBack() {
-    console.log(this.instructors.filter(i => i.instructorName == 'marcel'));
     this.matDialogRef.close();
-
   }
 
-  searchFor(){ 
-      this.instructorService.getAllInstructor()
-        .subscribe(x => this.instructors = x);
-
-    }
+ 
 }
