@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'reviews/:id', component: ListReviewComponent, canActivate:[IsAuthGuard]},
   {path: 'schools/:id', component: ListSchoolComponent, canActivate:[IsAuthGuard]},
   {path: 'schools', component: ListSchoolComponent, canActivate:[IsAuthGuard]},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent}, 
   {path: 'register', component: RegisterComponent},
   {path: 'app', component: AppComponent}
 ];

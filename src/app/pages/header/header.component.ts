@@ -15,15 +15,7 @@ import { SearchComponent } from '../search/search.component';
 })
 export class HeaderComponent implements OnInit {
 
-  public entityDropDownList: Select[] = [
-    { id: 1, entityName: 'Reviews' },
-    { id: 2, entityName: 'Instructors' },
-    { id: 3, entityName: 'Schools' },
-  ];
-
-  public selectedEntity: number = 1;
-
-  constructor(private router: Router, private matDialog: MatDialog) {
+  constructor(private router: Router, private matDialog: MatDialog, public authService: AuthService) {
   }
 
   ngOnInit(): void {

@@ -1,8 +1,23 @@
-<nav>
+<nav *ngIf="!(authService.isLoggedIn$ | async)">
+    <img src="assets/logo005r.png" alt="logo of site">
+    <ul>
+        <li><a class="meniu" [matMenuTriggerFor]="credentials"><i class="material-icons">account_circle</i></a></li>
+        <mat-menu #credentials="matMenu">
+            <button routerLink="/login" mat-menu-item *ngIf="!(authService.isLoggedIn$ | async)">Login</button>
+            <button mat-menu-item *ngIf="authService.isLoggedIn$ | async">History</button>
+            <button class="warn_exit" mat-menu-item *ngIf="authService.isLoggedIn$ | async" (click)="logout()">
+                <p>Logout</p>
+            </button>
+            <button routerLink="/register" mat-menu-item
+                *ngIf="!(authService.isLoggedIn$ | async)">Register</button>
+        </mat-menu>
+    </ul>
+</nav>
+<nav *ngIf="(authService.isLoggedIn$ | async)">
     <img src="assets/logo005r.png" alt="logo of site">
     <ul>
         <li><a href=""><i class="material-icons">home</i></a></li>
-        <li><a class="meniu"  [matMenuTriggerFor]="search"><i class="material-icons">search</i></a></li>
+        <li><a class="meniu"  [matMenuTriggerFor]="search"><i class="material-icons" >search</i></a></li>
         <mat-menu #search="matMenu">
             <button mat-menu-item (click)="openModalSearchComponent(1)">Reviews</button>
             <button mat-menu-item (click)="openModalSearchComponent(2)">Instructors</button>
@@ -20,7 +35,15 @@
             <button mat-menu-item (click)="openAddEntityComponent(2)">Instructors</button>
             <button mat-menu-item (click)="openAddEntityComponent(3)">DrivingSchools</button>
         </mat-menu>
-        <li><a class="meniu" (click)="logout()"><i class="material-icons">logout</i></a></li>
-
+        <li><a class="meniu" [matMenuTriggerFor]="credentials"><i class="material-icons">account_circle</i></a></li>
+        <mat-menu #credentials="matMenu">
+            <button routerLink="/login" mat-menu-item *ngIf="!(authService.isLoggedIn$ | async)">Login</button>
+            <button mat-menu-item *ngIf="authService.isLoggedIn$ | async">Account</button>
+            <button class="warn_exit" mat-menu-item *ngIf="authService.isLoggedIn$ | async" (click)="logout()">
+                <p>Logout</p>
+            </button>
+            <button routerLink="/register" mat-menu-item
+                *ngIf="!(authService.isLoggedIn$ | async)">Register</button>
+        </mat-menu>
     </ul>
 </nav>
