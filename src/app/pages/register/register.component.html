@@ -1,28 +1,40 @@
-<div class="login-box">
-    <br>
-    <div class="login-card">
+<div class="register-box">
+  <div class="register-card">
     <mat-card>
-      <mat-toolbar color="customGreen">
+      <mat-toolbar style="height:45px;" color="customGreen">
         <span>Register</span>
       </mat-toolbar>
-    <form class="register" [formGroup]="formGroup" (ngSubmit)="register()">
-        <mat-form-field class="username">
+      <br>
+      <form class="LOGIN" [formGroup]="formGroup" (ngSubmit)="register()">
+        <mat-form-field class="USERNAME">
           <mat-label>Username: </mat-label>
           <input matInput formControlName="username">
         </mat-form-field>
-    <br>
-    <mat-form-field class="password">
-        <mat-label>email: </mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-      <br>
+        <br>
+        <mat-form-field class="EMAIL">
+          <mat-label>Email: </mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <br>
         <mat-form-field class="password">
           <mat-label>Password: </mat-label>
           <input matInput type="password" formControlName="password">
         </mat-form-field>
         <br>
-        <button mat-raised-button type="submit"><i class="material-icons">fiber_new</i></button>
+        <mat-form-field class="confirmPassword">
+          <mat-label>Confirm password: </mat-label>
+          <input matInput type="password" formControlName="confirmPassword">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="customGreen" type="submit"><i class="material-icons">login</i></button>
       </form>
-      </mat-card>
-    </div>
-    </div>
+      <br>
+      <a routerLink="/login">l o g i n</a>
+      <mat-toolbar style="height:30px;" color="customGreen">
+        <span class="drive-safe">
+          <p>d r i v e | safe</p>
+        </span>
+      </mat-toolbar>
+    </mat-card>
+  </div>
+</div>

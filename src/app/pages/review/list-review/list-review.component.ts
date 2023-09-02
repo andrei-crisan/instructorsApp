@@ -1,25 +1,34 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Review } from 'src/app/model/review.model';
 import { ReviewService } from 'src/app/service/review.service';
 import { DataReviewComponent } from '../data-review/data-review.component';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-review',
   templateUrl: './list-review.component.html',
   styleUrls: ['./list-review.component.css']
 })
-export class ListReviewComponent implements OnInit {
+export class ListReviewComponent implements OnInit, AfterViewInit {
+  trackerItems = new MatTableDataSource<Review>;
   selectorReview: boolean = false;
   reviewById: Review;
   reviews: Array<Review> = [];
   searchKey: string;
-
+  displayedColumns: string[] = ['id', 'review', 'instructor', 'rating', 'actions'];
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
   constructor(private location: Location, private reviewService: ReviewService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAllReviews();
+  }
+
+  ngAfterViewInit(): void {
+    this.trackerItems.paginator = this.paginator;
   }
 
   findAllReviews() {
@@ -32,10 +41,12 @@ export class ListReviewComponent implements OnInit {
       .subscribe(x => this.reviewById = x);
   }
 
-  deleteSelectedReview(reviewId) {
+  deleteSelectedReview(reviewId: number) {
+    if(confirm("Are you sure?")){
     this.reviewService.deleteReviewById(reviewId)
       .subscribe(_ => console.log("Ok!"));
-      location.reload();
+    }
+    location.reload();
   }
 
   openDataModalComponent(review) {

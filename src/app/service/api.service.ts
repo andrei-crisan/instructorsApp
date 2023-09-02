@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private authRestUrl: 'http://localhost:8080/api/auth/signin';
-  
-  constructor(private httpClient : HttpClient) { }
 
-  getAuthorized(loginData): Observable<any>{
+  constructor(private httpClient: HttpClient) { }
+
+  getAuthorized(loginData): Observable<any> {
     return this.httpClient.post('http://localhost:8080/api/auth/signin', loginData);
+  }
+
+  getRegistered(registerData): Observable<any> {
+    return this.httpClient.post('http://localhost:8080/api/auth/signup', registerData);
   }
 }

@@ -34,8 +34,10 @@ export class ListSchoolComponent implements OnInit {
   }
 
   deleteSelectedDrivingSchool(drivingSchoolId) {
+    if(confirm("Are you sure?")){
     this.schoolService.deleteDrivingSchoolById(drivingSchoolId)
       .subscribe(_ => console.log("Ok!"));
+    }
       location.reload();
   }
 

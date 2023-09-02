@@ -41,8 +41,10 @@ export class ListInstructorComponent implements OnInit {
   }
 
   deleteSelectedInstructor(instructorId) {
+    if(confirm("Are you sure?")){
     this.instructorService.deleteInstructor(instructorId)
       .subscribe(_ => console.log("Ok!"));
+    }
       location.reload();
   }
 

@@ -1,4 +1,9 @@
-.butoane li{
-    padding: 5px;
-    display: inline;
+.butoane {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.butoane button {
+    margin: 10px;
 }

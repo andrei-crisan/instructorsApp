@@ -32,6 +32,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailsSchoolComponent } from './pages/school/details-school/details-school.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

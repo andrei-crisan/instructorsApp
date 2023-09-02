@@ -18,7 +18,6 @@
       <mat-label>Instructor's name </mat-label>
       <input matInput #instructorName>
     </mat-form-field>
-
     <mat-form-field class="instructor-surname">
       <mat-label>Instructor's surname </mat-label>
       <input matInput #instructorSurname>
@@ -34,9 +33,6 @@
     </mat-form-field>
   </form>
   <div class="butoane">
-    <nav>
-      <ul>
-        <li>
           <button color="customGreen" mat-raised-button (click)="saveReview(
                 reviewInput.value, 
                 ratingInput.value,
@@ -44,9 +40,5 @@
                 instructorSurname.value, 
                 drivingSchool.value, 
                 drivingSchoolAddress.value)"><i class="material-icons">add</i></button>
-        </li>
-        <li>
           <button color="customGreenCancel" mat-raised-button (click)="closeModalComponent()"><i class="material-icons">cancel</i></button>
-        </li>
-      </ul>
-    </nav>
+</div>
