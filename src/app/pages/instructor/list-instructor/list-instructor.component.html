@@ -8,7 +8,7 @@
         <th>Surname</th>
         <th>Driving school</th>
         <th>Reviews</th>
-        <th>Operations</th>
+        <th *ngIf="!(authService.hasPermission$ | async)">Operations</th>
       </tr>
     </thead>
     <tbody *ngIf="searchResponseParameter<=0">
@@ -19,7 +19,7 @@
         <td *ngIf="instructor.reviews?.length == 0"><i class="material-icons">exposure_zero</i></td>
         <td *ngIf="instructor.reviews?.length != 0" (click)="openDetailsModaComponent(instructor)">
           <i class="material-icons mat-review">reviews</i></td>
-        <td>
+        <td >
           <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
               class="material-icons mat-delete">delete</i></button>
           <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons mat-edit">edit</i></button>

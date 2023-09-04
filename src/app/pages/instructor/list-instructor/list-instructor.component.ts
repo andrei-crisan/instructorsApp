@@ -5,6 +5,7 @@ import { Instructor } from 'src/app/model/instructor.mode';
 import { InstructorService } from 'src/app/service/instructor.service';
 import { DataInstructorComponent } from '../data-instructor/data-instructor.component';
 import { DetailsInstructorComponent } from '../details-instructor/details-instructor.component';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-list-instructor',
@@ -19,18 +20,20 @@ export class ListInstructorComponent implements OnInit {
 
   constructor(
     private instructorService: InstructorService,
+    public authService: AuthService,
     private matDialog: MatDialog,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getResponseFromSearchComponent();
     this.findAllInstructors();
+
   }
 
   findAllInstructors() {
     this.instructorService.getAllInstructor()
       .subscribe(x => this.instructors = x);
-    console.log(this.instructors);
+
   }
 
   findInstructorById(instructorId: number) {
