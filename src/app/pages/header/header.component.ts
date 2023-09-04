@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Select } from 'src/app/model/select.model';
 import { AuthService } from 'src/app/service/auth.service';
 import { AddInstructorComponent } from '../instructor/add-instructor/add-instructor.component';
 import { AddReviewComponent } from '../review/add-review/add-review.component';

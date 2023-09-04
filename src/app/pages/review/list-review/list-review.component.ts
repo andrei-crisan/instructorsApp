@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Review } from 'src/app/model/review.model';
@@ -22,10 +21,9 @@ export class ListReviewComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'review', 'instructor', 'rating', 'actions'];
   searchResponseParameter: number;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  
-  constructor(private location: Location, 
-    private reviewService: ReviewService, 
-    private matDialog: MatDialog, 
+
+  constructor(private reviewService: ReviewService,
+    private matDialog: MatDialog,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -48,22 +46,22 @@ export class ListReviewComponent implements OnInit, AfterViewInit {
   }
 
   deleteSelectedReview(reviewId: number) {
-    if(confirm("Are you sure?")){
-    this.reviewService.deleteReviewById(reviewId)
-      .subscribe(_ => console.log("Ok!"));
+    if (confirm("Are you sure?")) {
+      this.reviewService.deleteReviewById(reviewId)
+        .subscribe(_ => console.log("Ok!"));
     }
     location.reload();
   }
 
-  openDataModalComponent(review) {
+  openDataModalComponent(review: Review) {
     this.matDialog.open(DataReviewComponent, { data: review });
   }
 
   showReviews() {
     if (this.selectorReview) {
-      this.selectorReview=false;
+      this.selectorReview = false;
     } else {
-     this.selectorReview=true;
+      this.selectorReview = true;
     }
   }
 

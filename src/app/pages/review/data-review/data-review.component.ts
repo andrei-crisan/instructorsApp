@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Instructor } from 'src/app/model/instructor.mode';
 import { Review } from 'src/app/model/review.model';
 import { ReviewService } from 'src/app/service/review.service';

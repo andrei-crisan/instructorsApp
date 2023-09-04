@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Instructor } from 'src/app/model/instructor.mode';
-import { School } from 'src/app/model/school.model';
 import { InstructorService } from 'src/app/service/instructor.service';
 
 @Component({
@@ -12,11 +11,11 @@ import { InstructorService } from 'src/app/service/instructor.service';
 export class DataInstructorComponent implements OnInit {
 
   constructor(
-    private instructorService: InstructorService, 
+    private instructorService: InstructorService,
     private matDialog: MatDialogRef<DataInstructorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-    selectedInstructor : Instructor = this.data;
+  selectedInstructor: Instructor = this.data;
 
   ngOnInit(): void {
   }
@@ -32,13 +31,13 @@ export class DataInstructorComponent implements OnInit {
     drivingSchoolName: string,
     drivingSchoolAddress: string) {
 
-    let instructor: Instructor = { 
-      id: this.selectedInstructor.id, 
-      instructorName, 
-      instructorSurname, 
+    let instructor: Instructor = {
+      id: this.selectedInstructor.id,
+      instructorName,
+      instructorSurname,
       drivingSchooldId: this.selectedInstructor.
-      drivingSchooldId, 
-      drivingSchoolName,  
+        drivingSchooldId,
+      drivingSchoolName,
       drivingSchoolAddress
     };
 
