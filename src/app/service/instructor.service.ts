@@ -7,7 +7,7 @@ import { Instructor } from '../model/instructor.mode';
   providedIn: 'root'
 })
 export class InstructorService {
-  private instructorRestUrl = 'http://localhost:8080/instructors';
+  private instructorRestUrl = 'http://instructors.azurewebsites.net/instructors';
 
   constructor(private httpClient: HttpClient) { }
 

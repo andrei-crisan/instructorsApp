@@ -7,7 +7,7 @@ import { School } from '../model/school.model';
   providedIn: 'root'
 })
 export class SchoolService {
-  private schoolRestUrl = 'http://localhost:8080/schools';
+  private schoolRestUrl = 'http://instructors.azurewebsites.net/schools';
 
   constructor(private httpClient: HttpClient) { }
 
