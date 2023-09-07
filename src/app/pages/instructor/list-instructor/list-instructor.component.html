@@ -28,14 +28,16 @@
     </tbody>
     <tbody *ngIf="searchResponseParameter > 0 && instructorById != null">
       <tr>
-        <td (click)="openDetailsModaComponent(instructorById)">{{instructorById.instructorName}}</td>
-        <td>{{instructorById.instructorSurname}}</td>
+        <td>{{instructorById.instructorName}}</td>
+        <td>{{instructorById.instructorSurname}}
         <td>{{instructorById.drivingSchoolName}}, {{instructorById.drivingSchoolAddress}}</td>
-        <td>
+        <td *ngIf="instructorById.reviews?.length == 0"><i class="material-icons">exposure_zero</i></td>
+        <td *ngIf="instructorById.reviews?.length != 0" (click)="openDetailsModaComponent(instructorById)">
+          <i class="material-icons mat-review">reviews</i></td>
+        <td >
           <button id="delete" (click)="deleteSelectedInstructor(instructorById.id)"><i
-              class="material-icons">delete</i></button>
-          <button id="update" (click)="openDataModalComponent(instructorById)"><i
-              class="material-icons">edit</i></button>
+              class="material-icons mat-delete">delete</i></button>
+          <button id="update" (click)="openDataModalComponent(instructorById)"><i class="material-icons mat-edit">edit</i></button>
         </td>
       </tr>
     </tbody>

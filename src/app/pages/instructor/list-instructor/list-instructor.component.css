@@ -45,23 +45,3 @@ button {
 .resultTable tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
-
-.search-bar{
-    justify-content: center;
-}
-.resultTable thead tr th:nth-child(4) {
-    text-align: center;
-}
-
-/* Align the content inside the td and th vertically to the middle */
-.resultTable th:nth-child(4),
-.resultTable td:nth-child(4) {
-    vertical-align: middle;
-    text-align: center;
-}
-
-/* Style the "exposure_zero" icon */
-.resultTable td i.material-icons {
-    font-size: 24px; /* Adjust the font size as needed */
-    vertical-align: middle;
-}
