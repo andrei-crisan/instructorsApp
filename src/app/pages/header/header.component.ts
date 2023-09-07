@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     if (confirm("Logging out?")) {
       localStorage.removeItem('instructors auth');
-      window.location.href='/login';
+      location.reload();
     }
   }
 }
