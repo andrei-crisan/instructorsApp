@@ -5,6 +5,7 @@ import { SchoolService } from 'src/app/service/school.service';
 import { DataSchoolComponent } from '../data-school/data-school.component';
 import { DetailsSchoolComponent } from '../details-school/details-school.component';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-list-school',
@@ -20,6 +21,7 @@ export class ListSchoolComponent implements OnInit {
   constructor(
     private schoolService: SchoolService,
     private matDialog: MatDialog,
+    public authService: AuthService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

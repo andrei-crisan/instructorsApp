@@ -6,6 +6,7 @@ import { DataReviewComponent } from '../data-review/data-review.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-list-review',
@@ -24,6 +25,7 @@ export class ListReviewComponent implements OnInit, AfterViewInit {
 
   constructor(private reviewService: ReviewService,
     private matDialog: MatDialog,
+    public authService: AuthService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

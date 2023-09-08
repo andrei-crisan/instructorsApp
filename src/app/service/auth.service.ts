@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { ApiService } from './api.service';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import jwt_decode from "jwt-decode";
 import { HttpErrorResponse } from '@angular/common/http';
 import { UserLogged } from '../model/user-logged.model';
 
@@ -14,27 +13,14 @@ import { UserLogged } from '../model/user-logged.model';
 export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
-
-  private _hasPermission$ = new BehaviorSubject<boolean>(false);
-  hasPermission$ = this._hasPermission$.asObservable();
   loggedUser!: UserLogged;
 
   get token() {
     return localStorage.getItem('instructors auth');
   }
 
-  get permission() {
-    if (this.token) {
-      const decodedToken: any = jwt_decode(this.token);
-      const roles: string[] = decodedToken.roles;
-
-      return roles.includes("ROLE_ADMIN");
-    }
-    return false;
-  }
-
   constructor(private apiService: ApiService, private route: Router) {
-    this._isLoggedIn$.next(!!this.token); 
+    this._isLoggedIn$.next(!!this.token);
 
   }
 
