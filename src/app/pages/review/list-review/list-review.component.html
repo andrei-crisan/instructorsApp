@@ -19,7 +19,7 @@
             class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
         </td>
         <td>{{review.instructor?.instructorName}}, {{review.instructor?.instructorSurname}}</td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td>
           <button class="heroes" (click)="deleteSelectedReview(review.id)"><i class="material-icons mat-delete">delete</i></button>
           <button id="update" (click)="openDataModalComponent(review)"><i class="material-icons mat-edit">edit</i></button>
         </td>
@@ -35,7 +35,7 @@
             class="material-icons mat-sentiment-negative">sentiment_very_dissatisfied</i>
         </td>
         <td>{{reviewById.instructor?.instructorName}}, {{reviewById.instructor?.instructorSurname}}</td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td >
           <button class="heroes" (click)="deleteSelectedReview(reviewById.id || 0)"><i class="material-icons mat-delete">delete</i></button>
           <button id="update" (click)="openDataModalComponent(reviewById)"><i class="material-icons mat-edit">edit</i></button>
         </td>

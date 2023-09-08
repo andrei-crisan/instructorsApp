@@ -18,7 +18,7 @@
         <td *ngIf="school.instructors?.length != 0" (click)="openDetailsModalComponent(school)">
           <i class="material-icons mat-instructors">emoji_people</i>
         </td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td >
           <button (click)="deleteSelectedDrivingSchool(school.id)"><i
               class="material-icons mat-delete">delete</i></button>
           <button (click)="openDataModalComponent(school)"><i class="material-icons mat-edit">edit</i></button>
@@ -34,7 +34,7 @@
         <td *ngIf="schoolByid.instructors?.length != 0" (click)="openDetailsModalComponent(schoolByid)">
           <i class="material-icons mat-instructors">emoji_people</i>
         </td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td>
           <button (click)="deleteSelectedDrivingSchool(schoolByid.id)"><i
               class="material-icons mat-delete">delete</i></button>
           <button (click)="openDataModalComponent(schoolByid)"><i class="material-icons mat-edit">edit</i></button>

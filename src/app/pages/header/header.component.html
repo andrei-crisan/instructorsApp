@@ -31,8 +31,8 @@
         <li><a class="meniu" [matMenuTriggerFor]="add"><i class="material-icons" >add_box</i></a></li>
         <mat-menu #add="matMenu">
             <button mat-menu-item (click)="openAddEntityComponent(1)">Reviews</button>
-            <button mat-menu-item (click)="openAddEntityComponent(2)" *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">Instructors</button>
-            <button mat-menu-item (click)="openAddEntityComponent(3)" *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">DrivingSchools</button>
+            <button mat-menu-item (click)="openAddEntityComponent(2)">Instructors</button>
+            <button mat-menu-item (click)="openAddEntityComponent(3)">DrivingSchools</button>
         </mat-menu>
         <li><a class="meniu" [matMenuTriggerFor]="credentials"><i class="material-icons">account_circle</i></a></li>
         <mat-menu #credentials="matMenu">

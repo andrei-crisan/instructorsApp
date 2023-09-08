@@ -19,7 +19,7 @@
         <td *ngIf="instructor.reviews?.length == 0"><i class="material-icons">exposure_zero</i></td>
         <td *ngIf="instructor.reviews?.length != 0" (click)="openDetailsModaComponent(instructor)">
           <i class="material-icons mat-review">reviews</i></td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td >
           <button id="delete" (click)="deleteSelectedInstructor(instructor.id)"><i
               class="material-icons mat-delete">delete</i></button>
           <button id="update" (click)="openDataModalComponent(instructor)"><i class="material-icons mat-edit">edit</i></button>
@@ -34,7 +34,7 @@
         <td *ngIf="instructorById.reviews?.length == 0"><i class="material-icons">exposure_zero</i></td>
         <td *ngIf="instructorById.reviews?.length != 0" (click)="openDetailsModaComponent(instructorById)">
           <i class="material-icons mat-review">reviews</i></td>
-        <td *ngIf="authService.loggedUser.roles[0]=='ROLE_ADMIN'">
+        <td >
           <button id="delete" (click)="deleteSelectedInstructor(instructorById.id)"><i
               class="material-icons mat-delete">delete</i></button>
           <button id="update" (click)="openDataModalComponent(instructorById)"><i class="material-icons mat-edit">edit</i></button>
