@@ -10,10 +10,10 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getAuthorized(loginData): Observable<any> {
-    return this.httpClient.post('https://instructors.azurewebsites.net/api/auth/signin', loginData);
+    return this.httpClient.post('http://localhost:8080/api/auth/signin', loginData);
   }
 
   getRegistered(registerData): Observable<any> {
-    return this.httpClient.post('https://instructors.azurewebsites.net/api/auth/signup', registerData);
+    return this.httpClient.post('http://localhost:8080/api/auth/signup', registerData);
   }
 }

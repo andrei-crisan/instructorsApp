@@ -7,7 +7,7 @@ import { Review } from '../model/review.model';
   providedIn: 'root'
 })
 export class ReviewService {
-  private reviewRestUrl = 'https://instructors.azurewebsites.net/reviews';
+  private reviewRestUrl = 'http://localhost:8080/reviews';
 
   constructor(private httpClient: HttpClient) { }
 
