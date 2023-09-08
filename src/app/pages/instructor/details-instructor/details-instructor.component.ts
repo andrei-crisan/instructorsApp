@@ -42,8 +42,6 @@ export class DetailsInstructorComponent implements OnInit {
 
   closeModalComponent() {
     this.matDialog.close();
-
-    //TODO: TO IMPLEMENT CLOSE BUTTOn
   }
 
 }
