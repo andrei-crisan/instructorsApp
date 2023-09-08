@@ -1,4 +1,4 @@
 export interface UserLogged{
-    id: number,
-    name: string
+    sub: string,
+    roles: string[]
 }
